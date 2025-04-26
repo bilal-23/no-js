@@ -1,0 +1,78 @@
+/* Shared Component Demo Styles */
+.component-demo {
+  padding: 5rem 0;
+}
+
+.component-demo h1 {
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), #7c4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.component-description {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.demo-container {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow);
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.component-info {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--light-gray);
+}
+
+.component-info h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.component-info p {
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+/* Code blocks */
+.code-example {
+  background: var(--secondary);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  color: var(--white);
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+.code-example code {
+  white-space: pre;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .component-demo {
+    padding: 3rem 0;
+  }
+
+  .demo-container {
+    padding: 2rem;
+    min-height: 200px;
+  }
+}

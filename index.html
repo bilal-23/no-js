@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No-JS Components</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">NoJS UI</a>
+                <nav class="nav">
+                    <a href="#components" class="nav-link">Components</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#docs" class="nav-link">Documentation</a>
+                    <a href="#github" class="nav-link">GitHub</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Simple UI Components <br>Without JavaScript</h1>
+            <p class="hero-description">
+                A modern, lightweight component library built with only HTML and CSS.
+                Create responsive, accessible interfaces without a single line of JavaScript.
+            </p>
+            <a href="#components" class="button">Explore Components</a>
+        </div>
+    </section>
+
+    <section id="components" class="components">
+        <div class="container">
+            <h2 class="section-title">Components</h2>
+            <div class="components-grid">
+                <!-- Dropdown Menu Component -->
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="5" width="18" height="3" rx="1.5" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M12 12L8 16M12 12L16 16" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Dropdown Menu</h3>
+                        <p class="component-description">A simple, accessible dropdown menu without JavaScript.</p>
+                        <a href="components/dropdown-menu/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Card -->
+                <div class="component-card coming-soon">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 1.5"/>
+                            <path d="M12 8V12L15 15" stroke="#1a237e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">More Components Coming Soon</h3>
+                        <p class="component-description">We're working on many more components including modals, tabs, accordions, tooltips, and more!</p>
+                    </div>
+                </div>
+
+                <!-- Commented out components until they're ready -->
+                <!--
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="5" width="14" height="14" rx="2" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M15 9L9 15" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M9 9L15 15" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Modal/Popup</h3>
+                        <p class="component-description">A modal or popup dialog without JavaScript.</p>
+                        <a href="/components/modal/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M3 8H21" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M8 3V8" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M14 3V8" stroke="#1a237e" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Tabs</h3>
+                        <p class="component-description">A tab interface that switches content on click, using only CSS.</p>
+                        <a href="/components/tabs/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4" width="18" height="4" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="3" y="10" width="18" height="4" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="3" y="16" width="18" height="4" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M17 6L13 6" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M17 12L13 12" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M17 18L13 18" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Accordion</h3>
+                        <p class="component-description">An accordion-style content box that opens and closes on click.</p>
+                        <a href="/components/accordion/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M12 8V12" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="16" r="1" fill="#1a237e"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Tooltips</h3>
+                        <p class="component-description">A simple tooltip that appears when hovering over an element.</p>
+                        <a href="/components/tooltip/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="12" rx="2" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="5" y="17" width="4" height="4" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="11" y="17" width="4" height="4" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="17" y="17" width="4" height="4" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M4 13L8 8L10 10L14 6L20 13" stroke="#1a237e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="18" cy="6" r="1" fill="#1a237e"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Image Gallery</h3>
+                        <p class="component-description">An image gallery where clicking thumbnails changes the main image.</p>
+                        <a href="/components/gallery/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="6" height="18" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="12" y="3" width="9" height="18" rx="1" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 2"/>
+                            <path d="M5 7H7" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M5 12H7" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M5 17H7" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Side Navigation</h3>
+                        <p class="component-description">A side navigation menu that toggles open and closed without JS.</p>
+                        <a href="/components/side-nav/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#1a237e" stroke-width="2"/>
+                            <circle cx="7" cy="9" r="1.5" fill="#1a237e"/>
+                            <circle cx="12" cy="9" r="1.5" stroke="#1a237e"/>
+                            <circle cx="17" cy="9" r="1.5" stroke="#1a237e"/>
+                            <path d="M7 12L7 17" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M12 12L12 17" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 1"/>
+                            <path d="M17 12L17 17" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 1"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Multi-step Form</h3>
+                        <p class="component-description">A form that progresses through multiple steps without JS.</p>
+                        <a href="/components/multi-step-form/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4" width="18" height="4" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M17 6H13" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M17 12H7" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M17 18H7" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M7 6H6" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Responsive Navbar</h3>
+                        <p class="component-description">A responsive navbar with a hamburger menu on small screens.</p>
+                        <a href="/components/navbar/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3L14.6569 8.60778L21 9.41844L16.5 13.6561L17.5267 20L12 17L6.47329 20L7.5 13.6561L3 9.41844L9.34315 8.60778L12 3Z" stroke="#1a237e" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Rating Star System</h3>
+                        <p class="component-description">A clickable star rating system using pure CSS.</p>
+                        <a href="/components/rating/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="6" height="6" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="14" y="4" width="6" height="6" rx="1" stroke="#1a237e" stroke-width="2" stroke-dasharray="1 1"/>
+                            <rect x="4" y="14" width="6" height="6" rx="1" stroke="#1a237e" stroke-width="2" stroke-dasharray="1 1"/>
+                            <rect x="14" y="14" width="6" height="6" rx="1" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M7 17L17 7" stroke="#1a237e" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 1"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Drag and Drop</h3>
+                        <p class="component-description">A partially functional drag-and-drop zone without JavaScript.</p>
+                        <a href="/components/drag-drop/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="16" height="16" rx="2" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M12 8V16" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M8 12L12 8L16 12" stroke="#1a237e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Custom File Upload</h3>
+                        <p class="component-description">A styled file upload button using pure CSS.</p>
+                        <a href="/components/file-upload/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="8" width="18" height="8" rx="2" stroke="#1a237e" stroke-width="2"/>
+                            <path d="M7 12H17" stroke="#1a237e" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Toast Notification</h3>
+                        <p class="component-description">A notification that appears temporarily, like a toast, without JS.</p>
+                        <a href="/components/toast/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="10" width="18" height="4" rx="2" stroke="#1a237e" stroke-width="2"/>
+                            <rect x="3" y="10" width="12" height="4" rx="2" fill="#b39ddb" fill-opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Progress Bar</h3>
+                        <p class="component-description">A simple progress bar with animation that indicates progress.</p>
+                        <a href="/components/progress-bar/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-image">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4" width="18" height="4" rx="1" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 1"/>
+                            <rect x="3" y="10" width="12" height="2" rx="1" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 1"/>
+                            <rect x="3" y="14" width="18" height="2" rx="1" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 1"/>
+                            <rect x="3" y="18" width="14" height="2" rx="1" stroke="#1a237e" stroke-width="2" stroke-dasharray="2 1"/>
+                        </svg>
+                    </div>
+                    <div class="component-content">
+                        <h3 class="component-title">Skeleton Loading</h3>
+                        <p class="component-description">A skeleton loader animation that simulates loading content.</p>
+                        <a href="/components/skeleton-loading/index.html" class="component-link">View Component →</a>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2023 NoJS UI. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

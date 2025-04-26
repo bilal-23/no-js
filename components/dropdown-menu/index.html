@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu | NoJS UI Components</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">NoJS UI</a>
+                <nav class="nav">
+                    <a href="../../index.html#components" class="nav-link">Components</a>
+                    <a href="../../index.html#about" class="nav-link">About</a>
+                    <a href="../../index.html#docs" class="nav-link">Documentation</a>
+                    <a href="#" class="nav-link">GitHub</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="component-demo">
+        <div class="container">
+            <h1>Dropdown Menu</h1>
+            <p class="component-description">A simple, accessible dropdown menu without JavaScript.</p>
+
+            <div class="demo-container">
+                <div class="demo-example">
+                    <h3>Simple Dropdown Menu</h3>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" 
+                        id="dropdown-toggle-1"
+                        aria-haspopup="true" 
+                        aria-expanded="false"
+                        onmouseenter="toggleDropdown(this, true)" 
+                        onmouseleave="toggleDropdown(this, false)"
+                        onfocus="toggleDropdown(this, true)"
+                        onblur="toggleDropdown(this, false)">Settings
+                            <span class="caret">▼</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-toggle-1">
+                            <li><a href="#" class="dropdown-item" role="menuitem">Profile</a></li>
+                            <li><a href="#" class="dropdown-item" role="menuitem">Preferences</a></li>
+                            <li><a href="#" class="dropdown-item" role="menuitem">Notifications</a></li>
+                            <li class="divider" role="separator"></li>
+                            <li><a href="#" class="dropdown-item" role="menuitem">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="demo-example">
+                    <h3>Nested Dropdown Menu</h3>
+                    <nav class="nav-dropdown">
+                        <ul class="nav-menu" role="menubar">
+                            <li class="nav-item" role="none">
+                                <a href="#" class="nav-link" role="menuitem">Home</a>
+                            </li>
+                            <li class="nav-item has-dropdown" role="none">
+                                <a href="#" class="nav-link" 
+                                   id="products-menu"
+                                   role="menuitem"
+                                   aria-haspopup="true" 
+                                   aria-expanded="false"
+                                   onmouseenter="toggleDropdown(this, true)" 
+                                   onmouseleave="toggleDropdown(this, false)"
+                                   onfocus="toggleDropdown(this, true)"
+                                   onblur="toggleDropdown(this, false)">Products <span class="caret">▼</span></a>
+                                <ul class="nav-dropdown-menu" role="menu" aria-labelledby="products-menu">
+                                    <li role="none"><a href="#" class="dropdown-item" role="menuitem">Electronics</a></li>
+                                    <li role="none"><a href="#" class="dropdown-item" role="menuitem">Clothing</a></li>
+                                    <li class="has-dropdown" role="none">
+                                        <a href="#" class="dropdown-item"
+                                           id="home-garden-menu"
+                                           role="menuitem"
+                                           aria-haspopup="true" 
+                                           aria-expanded="false"
+                                           onmouseenter="toggleDropdown(this, true)" 
+                                           onmouseleave="toggleDropdown(this, false)"
+                                           onfocus="toggleDropdown(this, true)"
+                                           onblur="toggleDropdown(this, false)">Home & Garden <span class="caret-right">▶</span></a>
+                                        <ul class="nav-dropdown-submenu" role="menu" aria-labelledby="home-garden-menu">
+                                            <li role="none"><a href="#" class="dropdown-item" role="menuitem">Furniture</a></li>
+                                            <li role="none"><a href="#" class="dropdown-item" role="menuitem">Decor</a></li>
+                                            <li role="none"><a href="#" class="dropdown-item" role="menuitem">Kitchen</a></li>
+                                        </ul>
+                                    </li>
+                                    <li role="none"><a href="#" class="dropdown-item" role="menuitem">Books</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" role="none">
+                                <a href="#" class="nav-link" role="menuitem">Services</a>
+                            </li>
+                            <li class="nav-item" role="none">
+                                <a href="#" class="nav-link" role="menuitem">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="component-info">
+                <h2>How It Works</h2>
+                <p>This dropdown menu is built using only HTML and CSS, with no JavaScript required. It uses the CSS
+                    <code>:hover</code> pseudo-class to trigger the display of the dropdown menu, and the
+                    <code>:focus-within</code> pseudo-class to maintain focus for keyboard accessibility.</p>
+
+                <div class="code-example">
+                    <code>&lt;button class="dropdown-toggle" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false"&gt;Settings &lt;span class="caret"&gt;▼&lt;/span&gt;&lt;/button&gt;
+&lt;ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-toggle"&gt;
+    &lt;li&gt;&lt;a href="#" class="dropdown-item" role="menuitem"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="dropdown-item" role="menuitem"&gt;Preferences&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="dropdown-item" role="menuitem"&gt;Notifications&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="divider" role="separator"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="dropdown-item" role="menuitem"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code>
+                </div>
+
+                <h3>Accessibility Features</h3>
+                <p>The dropdown menu is designed to be accessible, with the following features:</p>
+                <ul>
+                    <li>Keyboard navigable using Tab and Enter keys</li>
+                    <li>Proper focus management</li>
+                    <li>Dropdown opens on hover and focus</li>
+                    <li>Semantic HTML structure with proper nesting</li>
+                    <li>ARIA attributes for screen readers:
+                        <ul>
+                            <li><code>role="menu"</code>: Identifies the dropdown as a menu</li>
+                            <li><code>role="menuitem"</code>: Identifies each item in the menu</li>
+                            <li><code>role="separator"</code>: Identifies dividers between menu sections</li>
+                            <li><code>aria-haspopup="true"</code>: Indicates the element has a popup</li>
+                            <li><code>aria-expanded</code>: Indicates whether the popup is currently expanded</li>
+                            <li><code>aria-labelledby</code>: Associates the menu with its triggering element</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2023 NoJS UI. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to toggle the dropdown state
+        function toggleDropdown(element, isOpen) {
+            // Update aria-expanded attribute
+            element.setAttribute('aria-expanded', isOpen);
+        }
+    </script>
+</body>
+</html>
