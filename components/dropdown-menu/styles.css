@@ -226,6 +226,7 @@
     flex-direction: column;
     height: auto;
     min-height: 600px;
+    padding: 1rem;
   }
 
   .demo-example {
@@ -331,9 +332,11 @@
 
   .dropdown-item {
     padding: 0.75rem 2rem;
+  }
+  .nested-dropdown .dropdown-item,
+  .nav-dropdown-submenu .dropdown-item {
     color: var(--white);
   }
-
   /* Adjust arrow directions for mobile */
   .caret-right {
     transform: rotate(90deg);
@@ -354,7 +357,7 @@
 
 @media (max-width: 480px) {
   .demo-container {
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
   .dropdown-toggle {
@@ -365,7 +368,7 @@
 
   .dropdown-menu {
     width: 100%;
-    min-width: unset;
+    min-width: 180px;
   }
 
   .nav-dropdown {
