@@ -11,6 +11,11 @@ A lightweight, accessible modal dialog component built with the HTML `<dialog>` 
 - **Focus management** - Automatically traps focus within the modal
 - **Clean styling** - Modern appearance with smooth transitions
 
+## GitHub Repository
+
+This component is part of the NoJS UI Components library:
+[https://github.com/bilal-23/no-js/tree/main/components/modal](https://github.com/bilal-23/no-js/tree/main/components/modal)
+
 ## Implementation
 
 ### HTML Structure
@@ -105,6 +110,17 @@ A lightweight, accessible modal dialog component built with the HTML `<dialog>` 
 | `aria-modal="true"`                    | Tells assistive technologies that this is a modal window that blocks interaction with page content |
 | `aria-label="Close modal"`             | Provides an accessible name for buttons that only have icon content                                |
 
+### What Not To Add
+
+❌ **Don't add these to your modal:**
+
+- **`tabindex="-1"` on `<dialog>`**: Not needed — the `<dialog>` element is already focusable by default.
+- **Extra ARIA roles like `role="alertdialog"`**: Only use that if the modal is urgent (e.g., errors or warnings that require immediate attention).
+
+- **Redundant roles like `role="dialog"`**: The `<dialog>` element already has this semantic role built-in.
+
+- **Auto-focus attributes**: The dialog element handles focus management automatically when using `showModal()`.
+
 ### Keyboard Navigation
 
 - **Tab key**: Moves focus between interactive elements within the dialog
@@ -141,13 +157,6 @@ The component uses minimal inline JavaScript:
    ```
 
 ## Browser Support
-
-The `<dialog>` element is supported in all modern browsers:
-
-- Chrome 37+
-- Firefox 98+
-- Safari 15.4+
-- Edge 79+
 
 ## Additional Resources
 
