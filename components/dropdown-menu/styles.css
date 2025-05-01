@@ -43,7 +43,7 @@
 }
 .dropdown-toggle:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.3);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 .caret {
   font-size: 0.75rem;

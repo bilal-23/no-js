@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dropdown Menu | NoJS UI Components</title>
-    <link rel="stylesheet" href="../../style.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="container">
-        <div class="header-content">
-          <a href="../../index.html" class="logo">NoJS UI</a>
-          <!-- Nav commented out until implemented -->
-          <!--
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dropdown Menu | NoJS UI Components</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="../../index.html" class="logo">NoJS UI</a>
+        <!-- Nav commented out until implemented -->
+        <!--
                 <nav class="nav">
                     <a href="../../index.html#components" class="nav-link">Components</a>
                     <a href="../../index.html#about" class="nav-link">About</a>
@@ -22,150 +23,103 @@
                     <a href="#" class="nav-link">GitHub</a>
                 </nav>
                 -->
+      </div>
+    </div>
+  </header>
+
+  <main class="component-demo">
+    <div class="container">
+      <h1>Dropdown Menu</h1>
+      <p class="component-description">
+        A simple, accessible dropdown menu without JavaScript.
+      </p>
+
+      <div class="demo-container">
+        <div class="demo-example">
+          <h3>Simple Dropdown Menu</h3>
+          <div class="dropdown">
+            <button class="dropdown-toggle" id="dropdown-toggle-1" aria-haspopup="true" aria-expanded="false">
+              Settings
+              <span class="caret">▼</span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-toggle-1">
+              <li>
+                <a href="#" class="dropdown-item" role="menuitem">Profile</a>
+              </li>
+              <li>
+                <a href="#" class="dropdown-item" role="menuitem">Preferences</a>
+              </li>
+              <li>
+                <a href="#" class="dropdown-item" role="menuitem">Notifications</a>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a href="#" class="dropdown-item" role="menuitem">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="demo-example">
+          <h3>Nested Dropdown Menu</h3>
+          <nav class="nav-dropdown nested-dropdown">
+            <ul class="nav-menu" role="menubar">
+              <li class="nav-item" role="none">
+                <a href="#" class="nav-link" role="menuitem">Home</a>
+              </li>
+              <li class="nav-item has-dropdown" role="none">
+                <a class="nav-link" id="products-menu" role="menuitem" aria-haspopup="true"
+                  aria-expanded="false">Products <span class="caret">▼</span></a>
+                <ul class="nav-dropdown-menu" role="menu" aria-labelledby="products-menu">
+                  <li role="none">
+                    <a href="#" class="dropdown-item" role="menuitem">Electronics</a>
+                  </li>
+                  <li role="none">
+                    <a href="#" class="dropdown-item" role="menuitem">Clothing</a>
+                  </li>
+                  <li class="has-dropdown" role="none">
+                    <a class="dropdown-item" id="home-garden-menu" role="menuitem" aria-haspopup="true"
+                      aria-expanded="false">Home & Garden <span class="caret-right">▶</span></a>
+                    <ul class="nav-dropdown-submenu" role="menu" aria-labelledby="home-garden-menu">
+                      <li role="none">
+                        <a href="#" class="dropdown-item" role="menuitem">Furniture</a>
+                      </li>
+                      <li role="none">
+                        <a href="#" class="dropdown-item" role="menuitem">Decor</a>
+                      </li>
+                      <li role="none">
+                        <a href="#" class="dropdown-item" role="menuitem">Kitchen</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li role="none">
+                    <a href="#" class="dropdown-item" role="menuitem">Books</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item" role="none">
+                <a href="#" class="nav-link" role="menuitem">Services</a>
+              </li>
+              <li class="nav-item" role="none">
+                <a href="#" class="nav-link" role="menuitem">Contact</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </header>
 
-    <main class="component-demo">
-      <div class="container">
-        <h1>Dropdown Menu</h1>
-        <p class="component-description">
-          A simple, accessible dropdown menu without JavaScript.
+      <div class="component-info">
+        <h2>How It Works</h2>
+        <p>
+          This dropdown menu is built using only HTML and CSS, with no
+          JavaScript required. It uses the CSS <code>:hover</code> and
+          <code>:focus-within</code> pseudo-classes on desktop, and leverages
+          the CSS checkbox hack for mobile responsiveness. On mobile devices,
+          this allows users to tap to open/close submenus without requiring
+          JavaScript.
         </p>
 
-        <div class="demo-container">
-          <div class="demo-example">
-            <h3>Simple Dropdown Menu</h3>
-            <div class="dropdown">
-              <button
-                class="dropdown-toggle"
-                id="dropdown-toggle-1"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Settings
-                <span class="caret">▼</span>
-              </button>
-              <ul
-                class="dropdown-menu"
-                role="menu"
-                aria-labelledby="dropdown-toggle-1"
-              >
-                <li>
-                  <a href="#" class="dropdown-item" role="menuitem">Profile</a>
-                </li>
-                <li>
-                  <a href="#" class="dropdown-item" role="menuitem"
-                    >Preferences</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="dropdown-item" role="menuitem"
-                    >Notifications</a
-                  >
-                </li>
-                <li class="divider" role="separator"></li>
-                <li>
-                  <a href="#" class="dropdown-item" role="menuitem">Logout</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="demo-example">
-            <h3>Nested Dropdown Menu</h3>
-            <nav class="nav-dropdown nested-dropdown">
-              <ul class="nav-menu" role="menubar">
-                <li class="nav-item" role="none">
-                  <a href="#" class="nav-link" role="menuitem">Home</a>
-                </li>
-                <li class="nav-item has-dropdown" role="none">
-                  <a
-                 
-                    class="nav-link"
-                    id="products-menu"
-                    role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Products <span class="caret">▼</span></a
-                  >
-                  <ul
-                    class="nav-dropdown-menu"
-                    role="menu"
-                    aria-labelledby="products-menu"
-                  >
-                    <li role="none">
-                      <a href="#" class="dropdown-item" role="menuitem"
-                        >Electronics</a
-                      >
-                    </li>
-                    <li role="none">
-                      <a href="#" class="dropdown-item" role="menuitem"
-                        >Clothing</a
-                      >
-                    </li>
-                    <li class="has-dropdown" role="none">
-                      <a
-                        class="dropdown-item"
-                        id="home-garden-menu"
-                        role="menuitem"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        >Home & Garden <span class="caret-right">▶</span></a
-                      >
-                      <ul
-                        class="nav-dropdown-submenu"
-                        role="menu"
-                        aria-labelledby="home-garden-menu"
-                      >
-                        <li role="none">
-                          <a href="#" class="dropdown-item" role="menuitem"
-                            >Furniture</a
-                          >
-                        </li>
-                        <li role="none">
-                          <a href="#" class="dropdown-item" role="menuitem"
-                            >Decor</a
-                          >
-                        </li>
-                        <li role="none">
-                          <a href="#" class="dropdown-item" role="menuitem"
-                            >Kitchen</a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                    <li role="none">
-                      <a href="#" class="dropdown-item" role="menuitem"
-                        >Books</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item" role="none">
-                  <a href="#" class="nav-link" role="menuitem">Services</a>
-                </li>
-                <li class="nav-item" role="none">
-                  <a href="#" class="nav-link" role="menuitem">Contact</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-
-        <div class="component-info">
-          <h2>How It Works</h2>
-          <p>
-            This dropdown menu is built using only HTML and CSS, with no
-            JavaScript required. It uses the CSS <code>:hover</code> and
-            <code>:focus-within</code> pseudo-classes on desktop, and leverages
-            the CSS checkbox hack for mobile responsiveness. On mobile devices,
-            this allows users to tap to open/close submenus without requiring
-            JavaScript.
-          </p>
-
-          <div class="code-example">
-            <code
-              >&lt;!-- Simple dropdown example --&gt; &lt;div
+        <div class="code-example">
+          <code>&lt;div
               class="dropdown"&gt; &lt;button class="dropdown-toggle"
               id="dropdown-toggle" aria-haspopup="true"
               aria-expanded="false"&gt; Settings &lt;span
@@ -188,28 +142,28 @@
               class="nav-dropdown-menu" role="menu"&gt; &lt;li
               role="none"&gt;&lt;a href="#" class="dropdown-item"
               role="menuitem"&gt;Item 1&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
-              &lt;/li&gt; &lt;/ul&gt; &lt;/nav&gt;</code
-            >
-          </div>
-
-          <h3>Accessibility Features</h3>
-          <p>
-            The dropdown menu is designed to be accessible, with the following
-            features:
-          </p>
-          <ul>
-            <li>Keyboard navigable using Tab and Enter keys</li>
-            <li>Proper focus management with <code>:focus-within</code></li>
-            <li>Dropdown opens on hover and focus on desktop</li>
-            <li>
-              Touch-friendly interface on mobile with no JavaScript required
-            </li>
-            <li>Semantic HTML structure with proper nesting</li>
-            <li>Fully responsive design that adapts to all screen sizes</li>
-            <li>ARIA attributes for screen readers</li>
-          </ul>
+              &lt;/li&gt; &lt;/ul&gt; &lt;/nav&gt;</code>
         </div>
+
+        <h3>Accessibility Features</h3>
+        <p>
+          The dropdown menu is designed to be accessible, with the following
+          features:
+        </p>
+        <ul>
+          <li>Keyboard navigable using Tab and Enter keys</li>
+          <li>Proper focus management with <code>:focus-within</code></li>
+          <li>Dropdown opens on hover and focus on desktop</li>
+          <li>
+            Touch-friendly interface on mobile with no JavaScript required
+          </li>
+          <li>Semantic HTML structure with proper nesting</li>
+          <li>Fully responsive design that adapts to all screen sizes</li>
+          <li>ARIA attributes for screen readers</li>
+        </ul>
       </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
+
 </html>
