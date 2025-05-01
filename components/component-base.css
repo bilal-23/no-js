@@ -38,7 +38,8 @@
   border-top: 1px solid var(--light-gray);
 }
 
-.component-info h2 {
+.component-info h2,
+.component-info h3 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
   color: var(--primary);
@@ -61,7 +62,21 @@
   line-height: 1.5;
 }
 
+.code-example pre {
+  color: #f8f8f2;
+  padding: 1.5rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 0;
+}
+
 .code-example code {
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+.language-html {
+  display: block;
   white-space: pre;
 }
 

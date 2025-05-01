@@ -1,0 +1,155 @@
+@import url("../component-base.css");
+
+/* Modal specific styles */
+.demo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+/* Modal trigger button styling */
+.modal-trigger {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+  border: none;
+}
+
+/* Keyboard focus styling for the trigger */
+.modal-trigger:focus,
+.modal-trigger:hover {
+  outline: 3px solid var(--focus-ring, #4d90fe);
+  outline-offset: 2px;
+}
+
+/* Dialog styling */
+.modal-dialog {
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  max-width: 90%;
+  width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Dialog backdrop */
+.modal-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content styling */
+.modal-content {
+  padding: 25px;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Close button styling */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: #e0e0e0;
+  outline: 2px solid var(--focus-ring, #4d90fe);
+}
+
+/* Modal action buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.modal-button {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  outline: 2px solid var(--focus-ring, #4d90fe);
+  outline-offset: 2px;
+}
+
+/* Accessibility info section styling */
+.accessibility-info {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.accessibility-info h4 {
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.accessibility-info h4:first-child {
+  margin-top: 0;
+}
+
+.accessibility-info ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.accessibility-info li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.accessibility-info strong {
+  color: #333;
+  font-family: monospace;
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.accessibility-info code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}

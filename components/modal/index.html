@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal/Popup | NoJS UI Components</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">NoJS UI</a>
+          <nav class="nav">
+            <a href="../../index.html#components" class="nav-link"
+              >Components</a
+            >
+            <a href="../../index.html#about" class="nav-link">About</a>
+            <a href="../../index.html#docs" class="nav-link">Documentation</a>
+            <a href="#" class="nav-link">GitHub</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="component-demo">
+      <div class="container">
+        <h1>Modal/Popup</h1>
+        <p class="component-description">
+          A modal or popup dialog with minimal JavaScript.
+        </p>
+
+        <div class="demo-container">
+          <!-- Semantic modal using the dialog element with inline JS -->
+          <button
+            class="modal-trigger"
+            onclick="document.getElementById('modal').showModal()"
+            aria-haspopup="dialog"
+            aria-controls="modal"
+          >
+            Open Modal
+          </button>
+
+          <dialog
+            id="modal"
+            class="modal-dialog"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-description"
+            aria-modal="true"
+            onclick="if(event.target === this) this.close()"
+          >
+            <div class="modal-content">
+              <h2 id="modal-title">Modal Title</h2>
+              <p id="modal-description">
+                This is a modal dialog using the semantic HTML dialog element
+                with minimal JavaScript.
+              </p>
+              <button
+                class="modal-close"
+                aria-label="Close modal"
+                onclick="this.closest('dialog').close()"
+              >
+                &times;
+              </button>
+              <div class="modal-actions">
+                <button
+                  class="modal-button"
+                  aria-label="Close modal"
+                  onclick="this.closest('dialog').close()"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </dialog>
+        </div>
+
+        <div class="component-info">
+          <h2>How It Works</h2>
+          <p>
+            This modal is built using the semantic HTML
+            <code>&lt;dialog&gt;</code> element with minimal inline JavaScript.
+            It leverages the native accessibility features of the dialog element
+            for proper focus management and screen reader support.
+          </p>
+          <p>
+            The implementation uses only inline event handlers for minimal
+            JavaScript footprint, making it easy to copy and paste into any
+            project.
+          </p>
+          
+          <h3>Implementation Code</h3>
+          <div class="code-example">
+            <pre><code class="language-html">&lt;!-- Modal trigger button --&gt;
+&lt;button 
+  class="modal-trigger" 
+  onclick="document.getElementById('modal').showModal()"
+  aria-haspopup="dialog"
+  aria-controls="modal"&gt;
+  Open Modal
+&lt;/button&gt;
+
+&lt;!-- Modal dialog --&gt;
+&lt;dialog
+  id="modal"
+  class="modal-dialog"
+  aria-labelledby="modal-title"
+  aria-describedby="modal-description"
+  aria-modal="true"
+  onclick="if(event.target === this) this.close()"&gt;
+  &lt;div class="modal-content"&gt;
+    &lt;h2 id="modal-title"&gt;Modal Title&lt;/h2&gt;
+    &lt;p id="modal-description"&gt;
+      This is a modal dialog using the semantic HTML dialog element.
+    &lt;/p&gt;
+    &lt;button
+      class="modal-close"
+      aria-label="Close modal"
+      onclick="this.closest('dialog').close()"&gt;
+      &amp;times;
+    &lt;/button&gt;
+    &lt;div class="modal-actions"&gt;
+      &lt;button 
+        class="modal-button" 
+        aria-label="Close modal"
+        onclick="this.closest('dialog').close()"&gt;
+        Close
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;</code></pre>
+          </div>
+          
+          <h3>Accessibility Features</h3>
+          <div class="accessibility-info">
+            <h4>ARIA Attributes Explained</h4>
+            <ul>
+              <li>
+                <strong>aria-haspopup="dialog"</strong>: Indicates the button
+                opens a dialog popup
+              </li>
+              <li>
+                <strong>aria-controls="modal"</strong>: Establishes a
+                relationship between the button and the dialog it controls
+              </li>
+              <li>
+                <strong>aria-labelledby="modal-title"</strong>: Associates the
+                dialog with its title, announcing the title when the dialog
+                opens
+              </li>
+              <li>
+                <strong>aria-describedby="modal-description"</strong>: Provides
+                additional context about the dialog's purpose
+              </li>
+              <li>
+                <strong>aria-modal="true"</strong>: Tells assistive technologies
+                that this is a modal window that blocks interaction with page
+                content
+              </li>
+              <li>
+                <strong>aria-label="Close modal"</strong>: Provides an
+                accessible name for buttons that only have icon content
+              </li>
+            </ul>
+            
+            <h4>Keyboard Navigation</h4>
+            <ul>
+              <li>
+                <strong>Tab key</strong>: Moves focus between interactive
+                elements within the dialog
+              </li>
+              <li>
+                <strong>Escape key</strong>: Closes the dialog (built-in
+                behavior of the dialog element)
+              </li>
+              <li>
+                <strong>Enter/Space</strong>: Activates buttons when they have
+                keyboard focus
+              </li>
+            </ul>
+            
+            <h4>Focus Management</h4>
+            <p>
+              The <code>&lt;dialog&gt;</code> element with
+              <code>showModal()</code> automatically:
+            </p>
+            <ul>
+              <li>Traps focus within the dialog when open</li>
+              <li>Returns focus to the triggering element when closed</li>
+              <li>Makes content outside the dialog inert and unfocusable</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
