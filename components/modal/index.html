@@ -81,7 +81,7 @@
             JavaScript footprint, making it easy to copy and paste into any
             project.
           </p>
-          
+
           <h3>Implementation Code</h3>
           <div class="code-example">
             <pre><code class="language-html">&lt;!-- Modal trigger button --&gt;
@@ -123,7 +123,7 @@
   &lt;/div&gt;
 &lt;/dialog&gt;</code></pre>
           </div>
-          
+
           <h3>Accessibility Features</h3>
           <div class="accessibility-info">
             <h4>ARIA Attributes Explained</h4>
@@ -155,7 +155,7 @@
                 accessible name for buttons that only have icon content
               </li>
             </ul>
-            
+
             <h4>Keyboard Navigation</h4>
             <ul>
               <li>
@@ -171,7 +171,7 @@
                 keyboard focus
               </li>
             </ul>
-            
+
             <h4>Focus Management</h4>
             <p>
               The <code>&lt;dialog&gt;</code> element with
@@ -182,33 +182,48 @@
               <li>Returns focus to the triggering element when closed</li>
               <li>Makes content outside the dialog inert and unfocusable</li>
             </ul>
-            
+
             <h4>What Not To Add</h4>
-            <p>For best accessibility practices, avoid these common mistakes:</p>
+            <p>
+              For best accessibility practices, avoid these common mistakes:
+            </p>
             <ul>
               <li>
-                <strong>tabindex="-1"</strong> on <code>&lt;dialog&gt;</code>: Not needed — the dialog element is already focusable by default
+                <strong>tabindex="-1"</strong> on <code>&lt;dialog&gt;</code>:
+                Not needed — the dialog element is already focusable by default
               </li>
               <li>
-                <strong>role="alertdialog"</strong>: Only use this if the modal is urgent (e.g., errors or warnings that require immediate attention)
+                <strong>role="alertdialog"</strong>: Only use this if the modal
+                is urgent (e.g., errors or warnings that require immediate
+                attention)
               </li>
               <li>
-                <strong>role="dialog"</strong>: Redundant, as the dialog element already has this semantic role built-in
+                <strong>role="dialog"</strong>: Redundant, as the dialog element
+                already has this semantic role built-in
               </li>
               <li>
-                <strong>autofocus</strong> attributes: The dialog element handles focus management automatically when using showModal()
+                <strong>autofocus</strong> attributes: The dialog element
+                handles focus management automatically when using showModal()
               </li>
             </ul>
 
             <h4>Additional Resources</h4>
             <ul>
               <li>
-                <a href="https://github.com/bilal-23/no-js/tree/main/components/modal" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/bilal-23/no-js/tree/main/components/modal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   View this component on GitHub
                 </a>
               </li>
               <li>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   MDN Web Docs: The Dialog element
                 </a>
               </li>
