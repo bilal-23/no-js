@@ -1,0 +1,180 @@
+@import url("../component-base.css");
+
+/* Tabs specific styles will be added here */
+
+.demo-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tab-container {
+  height: auto;
+  width: 500px;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.tab-header {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--white);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.tab-button {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, outline 0.2s ease;
+  outline: none;
+  border: none;
+  width: 100%;
+  opacity: 1;
+  text-align: center;
+}
+
+/* Improved focus styles for keyboard navigation */
+.tab-button:focus-visible {
+  outline: 3px solid var(--focus-ring, #4d90fe);
+  outline-offset: 2px;
+}
+
+.tab-button:hover {
+  opacity: 0.9;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Highlight active tab label */
+#tab-1:checked ~ .tab-header label[for="tab-1"],
+#tab-2:checked ~ .tab-header label[for="tab-2"],
+#v-tab-1:checked ~ .tab-header label[for="v-tab-1"],
+#v-tab-2:checked ~ .tab-header label[for="v-tab-2"] {
+  background-color: var(--secondary, #0056b3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+/* Update ARIA selected state via CSS */
+#tab-1:checked ~ .tab-header #label-tab-1,
+#v-tab-1:checked ~ .tab-header #label-v-tab-1 {
+  aria-selected: true;
+}
+
+#tab-2:checked ~ .tab-header #label-tab-2,
+#v-tab-2:checked ~ .tab-header #label-v-tab-2 {
+  aria-selected: true;
+}
+
+#tab-1:not(:checked) ~ .tab-header #label-tab-1,
+#tab-2:not(:checked) ~ .tab-header #label-tab-2,
+#v-tab-1:not(:checked) ~ .tab-header #label-v-tab-1,
+#v-tab-2:not(:checked) ~ .tab-header #label-v-tab-2 {
+  aria-selected: false;
+}
+
+.tabs-content {
+  padding: 1rem;
+  background-color: var(--white);
+  width: 100%;
+}
+
+.tab-content {
+  display: none;
+  /* Nice fade-in effect */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Show content for active tab */
+#tab-1:checked ~ .tabs-content .tab-content[data-tab="tab-1"],
+#tab-2:checked ~ .tabs-content .tab-content[data-tab="tab-2"],
+#v-tab-1:checked ~ .tabs-content .tab-content[data-tab="v-tab-1"],
+#v-tab-2:checked ~ .tabs-content .tab-content[data-tab="v-tab-2"] {
+  display: block;
+}
+
+/* Keyboard navigation styles */
+.tab-content:focus-visible {
+  outline: 2px dashed var(--focus-ring, #4d90fe);
+  outline-offset: 4px;
+}
+
+/* Vertical tabs layout */
+.tabs-vertical {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  height: 300px;
+}
+
+.tabs-vertical .tab-header {
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+}
+
+.tabs-vertical .tabs-content {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Accessibility info section styling - matching the modal component */
+.accessibility-info {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.accessibility-info h4 {
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.accessibility-info h4:first-child {
+  margin-top: 0;
+}
+
+.accessibility-info ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.accessibility-info li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.accessibility-info strong {
+  color: #333;
+  font-family: monospace;
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.accessibility-info code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}

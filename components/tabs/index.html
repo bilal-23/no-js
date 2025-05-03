@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs | NoJS UI Components</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">NoJS UI</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="component-demo">
+      <div class="container">
+        <h1>Tabs</h1>
+        <p class="component-description">
+          A Tab interface with minimal JavaScript.
+        </p>
+
+        <div class="demo-container">
+          <h3>Horizontal Tabs</h3>
+          <div class="tab-container">
+            <!-- Put inputs at the top level of the tab container -->
+            <input
+              type="radio"
+              id="tab-1"
+              name="tab"
+              data-tab="tab-1"
+              checked
+              aria-controls="panel-1"
+            />
+            <input
+              type="radio"
+              id="tab-2"
+              name="tab"
+              data-tab="tab-2"
+              aria-controls="panel-2"
+            />
+
+            <div
+              class="tab-header"
+              role="tablist"
+              aria-orientation="horizontal"
+            >
+              <label
+                for="tab-1"
+                class="tab-button"
+                role="tab"
+                tabindex="0"
+                id="label-tab-1"
+                aria-selected="true"
+                >Tab 1</label
+              >
+              <label
+                for="tab-2"
+                class="tab-button"
+                role="tab"
+                tabindex="0"
+                id="label-tab-2"
+                aria-selected="false"
+                >Tab 2</label
+              >
+            </div>
+            <div class="tabs-content">
+              <div
+                class="tab-content"
+                id="panel-1"
+                role="tabpanel"
+                aria-labelledby="label-tab-1"
+                tabindex="0"
+                data-tab="tab-1"
+              >
+                <h2>Tab 1</h2>
+                <p>This is the content for Tab 1.</p>
+              </div>
+              <div
+                class="tab-content"
+                id="panel-2"
+                role="tabpanel"
+                aria-labelledby="label-tab-2"
+                tabindex="0"
+                data-tab="tab-2"
+              >
+                <h2>Tab 2</h2>
+                <p>This is the content for Tab 2.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Vertical Tabs</h3>
+          <div class="tab-container tabs-vertical">
+            <!-- Put inputs at the top level of the tab container -->
+            <input
+              type="radio"
+              id="v-tab-1"
+              name="v-tab"
+              data-tab="v-tab-1"
+              checked
+              aria-controls="v-panel-1"
+            />
+            <input
+              type="radio"
+              id="v-tab-2"
+              name="v-tab"
+              data-tab="v-tab-2"
+              aria-controls="v-panel-2"
+            />
+
+            <div class="tab-header" role="tablist" aria-orientation="vertical">
+              <label
+                for="v-tab-1"
+                class="tab-button"
+                role="tab"
+                tabindex="0"
+                id="label-v-tab-1"
+                aria-selected="true"
+                >Vertical Tab 1</label
+              >
+              <label
+                for="v-tab-2"
+                class="tab-button"
+                role="tab"
+                tabindex="0"
+                id="label-v-tab-2"
+                aria-selected="false"
+                >Vertical Tab 2</label
+              >
+            </div>
+            <div class="tabs-content">
+              <div
+                class="tab-content"
+                id="v-panel-1"
+                role="tabpanel"
+                aria-labelledby="label-v-tab-1"
+                tabindex="0"
+                data-tab="v-tab-1"
+              >
+                <h2>Vertical Tab 1</h2>
+                <p>
+                  This is the content for Vertical Tab 1. Notice that the tabs
+                  are arranged vertically on the left side.
+                </p>
+              </div>
+              <div
+                class="tab-content"
+                id="v-panel-2"
+                role="tabpanel"
+                aria-labelledby="label-v-tab-2"
+                tabindex="0"
+                data-tab="v-tab-2"
+              >
+                <h2>Vertical Tab 2</h2>
+                <p>
+                  This is the content for Vertical Tab 2. Use up/down arrow keys
+                  for keyboard navigation with vertical tabs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-info">
+          <h2>How It Works</h2>
+          <p>
+            This tab interface is built primarily using CSS with hidden radio
+            inputs to control tab states. The core functionality (showing/hiding
+            tab content and highlighting the active tab) works without any
+            JavaScript through CSS selectors.
+          </p>
+          <p>
+            The implementation uses the CSS sibling selector <code>~</code> to
+            show/hide content and highlight the active tab, making it
+            lightweight and performant.
+          </p>
+          <p>
+            <strong>The JavaScript's role:</strong> A minimal amount of
+            JavaScript is used solely for accessibility improvements:
+          </p>
+          <ol>
+            <li>
+              <strong>ARIA attribute management:</strong> Updates
+              <code>aria-selected</code> states dynamically when tabs change
+            </li>
+            <li>
+              <strong>Keyboard navigation:</strong> Enables arrow key navigation
+              between tabs (adapting to orientation)
+            </li>
+            <li>
+              <strong>Focus management:</strong> Moves focus to the newly
+              activated tab when switching with keyboard
+            </li>
+          </ol>
+          <p>
+            Without this JavaScript, the tabs would still function for mouse
+            users, but would lack proper keyboard accessibility and screen
+            reader announcements.
+          </p>
+          <p>
+            The component supports both horizontal and vertical orientations
+            using the <code>aria-orientation</code> attribute and CSS classes.
+          </p>
+
+          <h3>Implementation Code</h3>
+          <div class="code-example">
+            <h4>HTML</h4>
+            <pre><code class="language-html">&lt;!-- Tab container with radio inputs at the top level --&gt;
+&lt;div class="tab-container"&gt;
+  &lt;input
+    type="radio"
+    id="tab-1"
+    name="tab"
+    data-tab="tab-1"
+    checked
+    aria-controls="panel-1"
+  /&gt;
+  &lt;input 
+    type="radio" 
+    id="tab-2" 
+    name="tab" 
+    data-tab="tab-2"
+    aria-controls="panel-2"
+  /&gt;
+  
+  &lt;!-- Tab header with tab buttons as labels --&gt;
+  &lt;div class="tab-header" role="tablist" aria-orientation="horizontal"&gt;
+    &lt;label for="tab-1" class="tab-button" role="tab" tabindex="0" id="label-tab-1" aria-selected="true"&gt;Tab 1&lt;/label&gt;
+    &lt;label for="tab-2" class="tab-button" role="tab" tabindex="0" id="label-tab-2" aria-selected="false"&gt;Tab 2&lt;/label&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Tab content panels --&gt;
+  &lt;div class="tabs-content"&gt;
+    &lt;div class="tab-content" id="panel-1" role="tabpanel" aria-labelledby="label-tab-1" tabindex="0" data-tab="tab-1"&gt;
+      &lt;h2&gt;Tab 1&lt;/h2&gt;
+      &lt;p&gt;This is the content for Tab 1.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="tab-content" id="panel-2" role="tabpanel" aria-labelledby="label-tab-2" tabindex="0" data-tab="tab-2"&gt;
+      &lt;h2&gt;Tab 2&lt;/h2&gt;
+      &lt;p&gt;This is the content for Tab 2.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- For vertical orientation, add the tabs-vertical class and change aria-orientation --&gt;
+&lt;div class="tab-container tabs-vertical"&gt;
+  &lt;!-- Radio inputs remain the same --&gt;
+  
+  &lt;div class="tab-header" role="tablist" aria-orientation="vertical"&gt;
+    &lt;!-- Tab labels remain the same --&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="tabs-content"&gt;
+    &lt;!-- Tab content panels remain the same --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h4>CSS</h4>
+            <pre><code class="language-css">/* Hide radio buttons but keep them accessible */
+input[type="radio"] {
+  display: none;
+}
+
+/* Style for tab buttons */
+.tab-button {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+/* Tab header layout - horizontal (default) */
+.tab-header {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Vertical orientation styles */
+.tabs-vertical {
+  display: flex;
+  gap: 1rem;
+}
+
+.tabs-vertical .tab-header {
+  flex-direction: column;
+  width: 200px; /* Adjust as needed */
+}
+
+.tabs-vertical .tabs-content {
+  flex: 1;
+}
+
+/* Hide all tab content by default */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Key CSS: Show content for active tab using sibling selector */
+#tab-1:checked ~ .tabs-content .tab-content[data-tab="tab-1"],
+#tab-2:checked ~ .tabs-content .tab-content[data-tab="tab-2"],
+#v-tab-1:checked ~ .tabs-content .tab-content[data-tab="v-tab-1"],
+#v-tab-2:checked ~ .tabs-content .tab-content[data-tab="v-tab-2"] {
+  display: block;
+}
+
+/* Key CSS: Highlight active tab label */
+#tab-1:checked ~ .tab-header label[for="tab-1"],
+#tab-2:checked ~ .tab-header label[for="tab-2"],
+#v-tab-1:checked ~ .tab-header label[for="v-tab-1"],
+#v-tab-2:checked ~ .tab-header label[for="v-tab-2"] {
+  background-color: var(--secondary, #0056b3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+/* Fade-in animation for tab content */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}</code></pre>
+
+            <h4>JavaScript (for Accessibility)</h4>
+            <pre><code class="language-javascript">// This script enhances keyboard accessibility and ARIA states
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tablists = document.querySelectorAll('[role="tablist"]');
+  
+  // Add keyboard navigation with arrow keys
+  tablists.forEach(tablist => {
+    const isVertical = tablist.getAttribute('aria-orientation') === 'vertical';
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('keydown', function(e) {
+        // Determine which keys to use based on orientation
+        const nextKey = isVertical ? 'ArrowDown' : 'ArrowRight';
+        const prevKey = isVertical ? 'ArrowUp' : 'ArrowLeft';
+        
+        // Handle arrow keys
+        if (e.key === nextKey || e.key === prevKey) {
+          e.preventDefault();
+          
+          const currentIndex = tabs.indexOf(this);
+          let newIndex;
+          
+          if (e.key === nextKey) {
+            newIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+          } else {
+            newIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
+          }
+          
+          // Activate new tab and move focus
+          tabs[newIndex].click();
+          tabs[newIndex].focus();
+        }
+        
+        // Handle Enter or Space key
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+  });
+  
+  // Update ARIA attributes when tabs change
+  const radioButtons = document.querySelectorAll('input[type="radio"][name="tab"], input[type="radio"][name="v-tab"]');
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', function() {
+      tabButtons.forEach(tab => {
+        const isSelected = tab.getAttribute('for') === this.id;
+        tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+      });
+    });
+  });
+});</code></pre>
+          </div>
+
+          <h3>Accessibility Features</h3>
+          <div class="accessibility-info">
+            <h4>ARIA Attributes Explained</h4>
+            <ul>
+              <li>
+                <strong>role="tablist"</strong>: Identifies the container as a
+                collection of tabs
+              </li>
+              <li>
+                <strong>role="tab"</strong>: Identifies each tab button/trigger
+              </li>
+              <li>
+                <strong>role="tabpanel"</strong>: Identifies each tab content
+                panel
+              </li>
+              <li>
+                <strong>aria-orientation="horizontal/vertical"</strong>:
+                Indicates the layout direction of tabs
+              </li>
+              <li>
+                <strong>aria-selected="true/false"</strong>: Indicates which tab
+                is currently selected
+              </li>
+              <li>
+                <strong>aria-controls="panel-id"</strong>: Associates each tab
+                with the panel it controls
+              </li>
+              <li>
+                <strong>aria-labelledby="tab-id"</strong>: Associates each panel
+                with the tab that labels it
+              </li>
+              <li>
+                <strong>tabindex="0"</strong>: Makes tabs keyboard focusable
+              </li>
+            </ul>
+
+            <h4>Keyboard Navigation</h4>
+            <ul>
+              <li>
+                <strong>Tab key</strong>: Moves focus to the tabs and between
+                tabs and their panels
+              </li>
+              <li>
+                <strong>Right/Down arrows</strong>: Move to next tab (depends on
+                orientation)
+              </li>
+              <li>
+                <strong>Left/Up arrows</strong>: Move to previous tab (depends
+                on orientation)
+              </li>
+              <li>
+                <strong>Enter/Space</strong>: Activates the tab that currently
+                has keyboard focus
+              </li>
+            </ul>
+
+            <h4>Focus Management</h4>
+            <p>The minimal JavaScript enhances keyboard accessibility by:</p>
+            <ul>
+              <li>
+                Supporting arrow key navigation between tabs (adapting to
+                orientation)
+              </li>
+              <li>Automatically focusing the newly activated tab</li>
+              <li>Ensuring proper ARIA states are updated when tabs change</li>
+            </ul>
+
+            <h4>What Not To Add</h4>
+            <p>
+              For best accessibility practices, avoid these common mistakes:
+            </p>
+            <ul>
+              <li>
+                <strong>role="button"</strong> on tab elements: Not needed and
+                conflicts with <code>role="tab"</code>
+              </li>
+              <li>
+                <strong>aria-hidden="true"</strong> on inactive tab panels: The
+                CSS hiding is sufficient, and using aria-hidden would remove
+                them from the accessibility tree
+              </li>
+              <li>
+                <strong>tabindex="-1"</strong> on inactive tab elements: All
+                tabs should remain in the tab order for proper keyboard
+                navigation
+              </li>
+              <li>
+                <strong>Complex JavaScript</strong>: Adding unnecessary
+                JavaScript when CSS can handle the core functionality
+              </li>
+            </ul>
+
+            <h4>Additional Resources</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/bilal-23/no-js/tree/main/components/tabs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View this component on GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WAI-ARIA: Tab Panel Pattern
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MDN Web Docs: ARIA Tab Role
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Minimal JavaScript for keyboard accessibility -->
+    <script>
+      // This script enhances the keyboard accessibility of tabs
+      // It allows navigation between tabs using arrow keys and sets proper ARIA attributes
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabButtons = document.querySelectorAll(".tab-button");
+        const tablists = document.querySelectorAll('[role="tablist"]');
+
+        // Add keyboard navigation with arrow keys
+        tablists.forEach((tablist) => {
+          const isVertical =
+            tablist.getAttribute("aria-orientation") === "vertical";
+          const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+
+          tabs.forEach((tab) => {
+            tab.addEventListener("keydown", function (e) {
+              // Determine which keys to use based on orientation
+              const nextKey = isVertical ? "ArrowDown" : "ArrowRight";
+              const prevKey = isVertical ? "ArrowUp" : "ArrowLeft";
+
+              // Handle arrow keys
+              if (e.key === nextKey || e.key === prevKey) {
+                e.preventDefault();
+
+                const currentIndex = tabs.indexOf(this);
+                let newIndex;
+
+                if (e.key === nextKey) {
+                  newIndex =
+                    currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+                } else {
+                  newIndex =
+                    currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
+                }
+
+                // Activate new tab and move focus
+                tabs[newIndex].click();
+                tabs[newIndex].focus();
+              }
+
+              // Handle Enter or Space key
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                this.click();
+              }
+            });
+          });
+        });
+
+        // Update ARIA attributes when tabs change
+        const radioButtons = document.querySelectorAll(
+          'input[type="radio"][name="tab"], input[type="radio"][name="v-tab"]'
+        );
+        radioButtons.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            tabButtons.forEach((tab) => {
+              const isSelected = tab.getAttribute("for") === this.id;
+              tab.setAttribute("aria-selected", isSelected ? "true" : "false");
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
