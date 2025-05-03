@@ -70,58 +70,19 @@
 
         <div class="component-info">
           <h2>How It Works</h2>
-          <p>
-            This modal is built using the semantic HTML
-            <code>&lt;dialog&gt;</code> element with minimal inline JavaScript.
-            It leverages the native accessibility features of the dialog element
-            for proper focus management and screen reader support.
-          </p>
-          <p>
-            The implementation uses only inline event handlers for minimal
-            JavaScript footprint, making it easy to copy and paste into any
-            project.
-          </p>
-
-          <h3>Implementation Code</h3>
-          <div class="code-example">
-            <pre><code class="language-html">&lt;!-- Modal trigger button --&gt;
-&lt;button 
-  class="modal-trigger" 
-  onclick="document.getElementById('modal').showModal()"
-  aria-haspopup="dialog"
-  aria-controls="modal"&gt;
-  Open Modal
-&lt;/button&gt;
-
-&lt;!-- Modal dialog --&gt;
-&lt;dialog
-  id="modal"
-  class="modal-dialog"
-  aria-labelledby="modal-title"
-  aria-describedby="modal-description"
-  aria-modal="true"
-  closedBy="any"&gt;
-  &lt;div class="modal-content"&gt;
-    &lt;h2 id="modal-title"&gt;Modal Title&lt;/h2&gt;
-    &lt;p id="modal-description"&gt;
-      This is a modal dialog using the semantic HTML dialog element.
-    &lt;/p&gt;
-    &lt;button
-      class="modal-close"
-      aria-label="Close modal"
-      onclick="this.closest('dialog').close()"&gt;
-      &amp;times;
-    &lt;/button&gt;
-    &lt;div class="modal-actions"&gt;
-      &lt;button 
-        class="modal-button" 
-        aria-label="Close modal"
-        onclick="this.closest('dialog').close()"&gt;
-        Close
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/dialog&gt;</code></pre>
+          <div class="how-it-works">
+            <p>
+              This modal is built using the semantic HTML
+              <code>&lt;dialog&gt;</code> element with minimal inline
+              JavaScript. It leverages the native accessibility features of the
+              dialog element for proper focus management and screen reader
+              support.
+            </p>
+            <p>
+              The implementation uses only inline event handlers for minimal
+              JavaScript footprint, making it easy to copy and paste into any
+              project.
+            </p>
           </div>
 
           <h3>Accessibility Features</h3>
@@ -228,6 +189,48 @@
                 </a>
               </li>
             </ul>
+          </div>
+
+          <h3>Implementation Code</h3>
+          <div class="code-example">
+            <pre><code class="language-html">&lt;!-- Modal trigger button --&gt;
+&lt;button 
+  class="modal-trigger" 
+  onclick="document.getElementById('modal').showModal()"
+  aria-haspopup="dialog"
+  aria-controls="modal"&gt;
+  Open Modal
+&lt;/button&gt;
+
+&lt;!-- Modal dialog --&gt;
+&lt;dialog
+  id="modal"
+  class="modal-dialog"
+  aria-labelledby="modal-title"
+  aria-describedby="modal-description"
+  aria-modal="true"
+  closedBy="any"&gt;
+  &lt;div class="modal-content"&gt;
+    &lt;h2 id="modal-title"&gt;Modal Title&lt;/h2&gt;
+    &lt;p id="modal-description"&gt;
+      This is a modal dialog using the semantic HTML dialog element.
+    &lt;/p&gt;
+    &lt;button
+      class="modal-close"
+      aria-label="Close modal"
+      onclick="this.closest('dialog').close()"&gt;
+      &amp;times;
+    &lt;/button&gt;
+    &lt;div class="modal-actions"&gt;
+      &lt;button 
+        class="modal-button" 
+        aria-label="Close modal"
+        onclick="this.closest('dialog').close()"&gt;
+        Close
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;</code></pre>
           </div>
         </div>
       </div>

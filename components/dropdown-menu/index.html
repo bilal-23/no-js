@@ -153,40 +153,179 @@
 
         <div class="component-info">
           <h2>How It Works</h2>
-          <p>
-            This dropdown menu is built primarily using HTML and CSS with the
-            <code>:hover</code> and <code>:focus-within</code> pseudo-classes to
-            show/hide dropdown content without JavaScript on desktop devices.
-          </p>
-          <p>
-            For mobile devices, the component uses a CSS-only approach with
-            hidden checkboxes and labels to handle touch interactions, making it
-            responsive across all devices.
-          </p>
-          <p>
-            <strong>The JavaScript's role:</strong> A minimal amount of
-            JavaScript is used solely for accessibility improvements:
-          </p>
-          <ol>
-            <li>
-              <strong>ARIA attribute management:</strong> Updates
-              <code>aria-expanded</code> states dynamically when dropdowns
-              open/close
-            </li>
-            <li>
-              <strong>Keyboard navigation:</strong> Enables arrow key navigation
-              within dropdown menus
-            </li>
-            <li>
-              <strong>Focus management:</strong> Restores focus properly when
-              dropdowns are closed
-            </li>
-          </ol>
-          <p>
-            Without this JavaScript, the dropdowns would still function for
-            mouse and touch users, but would lack proper keyboard accessibility
-            and screen reader announcements.
-          </p>
+          <div class="how-it-works">
+            <p>
+              This dropdown menu is built primarily using HTML and CSS with the
+              <code>:hover</code> and <code>:focus-within</code> pseudo-classes
+              to show/hide dropdown content without JavaScript on desktop
+              devices.
+            </p>
+            <p>
+              For mobile devices, the component uses a CSS-only approach with
+              hidden checkboxes and labels to handle touch interactions, making
+              it responsive across all devices.
+            </p>
+            <p>
+              <strong>The JavaScript's role:</strong> A minimal amount of
+              JavaScript is used solely for accessibility improvements:
+            </p>
+            <ol>
+              <li>
+                <strong>ARIA attribute management:</strong> Updates
+                <code>aria-expanded</code> states dynamically when dropdowns
+                open/close
+              </li>
+              <li>
+                <strong>Keyboard navigation:</strong> Enables arrow key
+                navigation within dropdown menus
+              </li>
+              <li>
+                <strong>Focus management:</strong> Restores focus properly when
+                dropdowns are closed
+              </li>
+            </ol>
+            <p>
+              Without this JavaScript, the dropdowns would still function for
+              mouse and touch users, but would lack proper keyboard
+              accessibility and screen reader announcements.
+            </p>
+          </div>
+
+          <h3>Accessibility Features</h3>
+          <div class="accessibility-info">
+            <h4>ARIA Attributes Explained</h4>
+            <ul>
+              <li>
+                <strong>aria-haspopup="true"</strong>: Indicates that the button
+                controls a popup menu
+              </li>
+              <li>
+                <strong>aria-expanded="false/true"</strong>: Indicates whether
+                the dropdown menu is currently collapsed or expanded
+              </li>
+              <li>
+                <strong>role="menu"</strong>: Identifies the dropdown as a menu
+              </li>
+              <li>
+                <strong>role="menuitem"</strong>: Identifies each item in the
+                dropdown menu
+              </li>
+              <li>
+                <strong>role="menubar"</strong>: Used for the horizontal
+                navigation bar containing dropdown menus
+              </li>
+              <li>
+                <strong>role="separator"</strong>: Used for divider elements
+                that separate groups of menu items
+              </li>
+              <li>
+                <strong>aria-labelledby</strong>: Associates the menu with the
+                button that controls it
+              </li>
+              <li>
+                <strong>role="none"</strong>: Removes the implicit role from
+                list items that are only structural
+              </li>
+            </ul>
+
+            <h4>Keyboard Navigation</h4>
+            <ul>
+              <li>
+                <strong>Tab key</strong>: Moves focus between dropdown buttons
+                and other focusable elements
+              </li>
+              <li>
+                <strong>Enter/Space</strong>: Opens the dropdown when a dropdown
+                button has focus
+              </li>
+              <li><strong>Escape</strong>: Closes an open dropdown menu</li>
+              <li>
+                <strong>Down arrow</strong>: Opens a dropdown and moves focus to
+                the first item
+              </li>
+              <li>
+                <strong>Up/Down arrows</strong>: Navigate between items within
+                an open dropdown
+              </li>
+              <li>
+                <strong>Right arrow</strong>: Opens a submenu when focus is on a
+                menu item with a submenu
+              </li>
+            </ul>
+
+            <h4>Focus Management</h4>
+            <p>The dropdown enhances focus management through:</p>
+            <ul>
+              <li>
+                Using <code>:focus-within</code> to keep dropdowns open when
+                their contents have focus
+              </li>
+              <li>
+                Automatically focusing the first menu item when a dropdown is
+                opened via keyboard
+              </li>
+              <li>
+                Returning focus to the trigger button when a dropdown is closed
+              </li>
+              <li>
+                Maintaining proper focus order within nested dropdown structures
+              </li>
+            </ul>
+
+            <h4>What Not To Add</h4>
+            <p>
+              For best accessibility practices, avoid these common mistakes:
+            </p>
+            <ul>
+              <li>
+                <strong>tabindex="-1"</strong> on menu items: This prevents
+                keyboard users from accessing menu items
+              </li>
+              <li>
+                <strong>autofocus</strong> attributes: These can be disorienting
+                and should be avoided
+              </li>
+              <li>
+                <strong>Using <code>&lt;div&gt;</code> elements</strong> for
+                interactive menu items without proper roles and keyboard support
+              </li>
+              <li>
+                <strong>Non-semantic toggle mechanisms</strong>: Using arbitrary
+                elements as toggles without proper ARIA attributes
+              </li>
+            </ul>
+
+            <h4>Additional Resources</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/bilal-23/no-js/tree/main/components/dropdown-menu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View this component on GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WAI-ARIA: Menu Button Pattern
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/menu_role"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MDN Web Docs: ARIA Menu Role
+                </a>
+              </li>
+            </ul>
+          </div>
 
           <h3>Implementation Code</h3>
           <div class="code-example">
@@ -379,142 +518,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });</code></pre>
-          </div>
-
-          <h3>Accessibility Features</h3>
-          <div class="accessibility-info">
-            <h4>ARIA Attributes Explained</h4>
-            <ul>
-              <li>
-                <strong>aria-haspopup="true"</strong>: Indicates that the button
-                controls a popup menu
-              </li>
-              <li>
-                <strong>aria-expanded="false/true"</strong>: Indicates whether
-                the dropdown menu is currently collapsed or expanded
-              </li>
-              <li>
-                <strong>role="menu"</strong>: Identifies the dropdown as a menu
-              </li>
-              <li>
-                <strong>role="menuitem"</strong>: Identifies each item in the
-                dropdown menu
-              </li>
-              <li>
-                <strong>role="menubar"</strong>: Used for the horizontal
-                navigation bar containing dropdown menus
-              </li>
-              <li>
-                <strong>role="separator"</strong>: Used for divider elements
-                that separate groups of menu items
-              </li>
-              <li>
-                <strong>aria-labelledby</strong>: Associates the menu with the
-                button that controls it
-              </li>
-              <li>
-                <strong>role="none"</strong>: Removes the implicit role from
-                list items that are only structural
-              </li>
-            </ul>
-
-            <h4>Keyboard Navigation</h4>
-            <ul>
-              <li>
-                <strong>Tab key</strong>: Moves focus between dropdown buttons
-                and other focusable elements
-              </li>
-              <li>
-                <strong>Enter/Space</strong>: Opens the dropdown when a dropdown
-                button has focus
-              </li>
-              <li><strong>Escape</strong>: Closes an open dropdown menu</li>
-              <li>
-                <strong>Down arrow</strong>: Opens a dropdown and moves focus to
-                the first item
-              </li>
-              <li>
-                <strong>Up/Down arrows</strong>: Navigate between items within
-                an open dropdown
-              </li>
-              <li>
-                <strong>Right arrow</strong>: Opens a submenu when focus is on a
-                menu item with a submenu
-              </li>
-            </ul>
-
-            <h4>Focus Management</h4>
-            <p>The dropdown enhances focus management through:</p>
-            <ul>
-              <li>
-                Using <code>:focus-within</code> to keep dropdowns open when
-                their contents have focus
-              </li>
-              <li>
-                Automatically focusing the first menu item when a dropdown is
-                opened via keyboard
-              </li>
-              <li>
-                Returning focus to the trigger button when a dropdown is closed
-              </li>
-              <li>
-                Maintaining proper focus order within nested dropdown structures
-              </li>
-            </ul>
-
-            <h4>What Not To Add</h4>
-            <p>
-              For best accessibility practices, avoid these common mistakes:
-            </p>
-            <ul>
-              <li>
-                <strong>tabindex="-1"</strong> on menu items: This prevents
-                keyboard users from accessing menu items
-              </li>
-              <li>
-                <strong>autofocus</strong> attributes: These can be disorienting
-                and should be avoided
-              </li>
-              <li>
-                <strong>Using <code>&lt;div&gt;</code> elements</strong> for
-                interactive menu items without proper roles and keyboard support
-              </li>
-              <li>
-                <strong>Non-semantic toggle mechanisms</strong>: Using arbitrary
-                elements as toggles without proper ARIA attributes
-              </li>
-            </ul>
-
-            <h4>Additional Resources</h4>
-            <ul>
-              <li>
-                <a
-                  href="https://github.com/bilal-23/no-js/tree/main/components/dropdown-menu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View this component on GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WAI-ARIA: Menu Button Pattern
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/menu_role"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  MDN Web Docs: ARIA Menu Role
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

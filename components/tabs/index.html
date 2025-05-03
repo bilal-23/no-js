@@ -167,44 +167,170 @@
 
         <div class="component-info">
           <h2>How It Works</h2>
-          <p>
-            This tab interface is built primarily using CSS with hidden radio
-            inputs to control tab states. The core functionality (showing/hiding
-            tab content and highlighting the active tab) works without any
-            JavaScript through CSS selectors.
-          </p>
-          <p>
-            The implementation uses the CSS sibling selector <code>~</code> to
-            show/hide content and highlight the active tab, making it
-            lightweight and performant.
-          </p>
-          <p>
-            <strong>The JavaScript's role:</strong> A minimal amount of
-            JavaScript is used solely for accessibility improvements:
-          </p>
-          <ol>
-            <li>
-              <strong>ARIA attribute management:</strong> Updates
-              <code>aria-selected</code> states dynamically when tabs change
-            </li>
-            <li>
-              <strong>Keyboard navigation:</strong> Enables arrow key navigation
-              between tabs (adapting to orientation)
-            </li>
-            <li>
-              <strong>Focus management:</strong> Moves focus to the newly
-              activated tab when switching with keyboard
-            </li>
-          </ol>
-          <p>
-            Without this JavaScript, the tabs would still function for mouse
-            users, but would lack proper keyboard accessibility and screen
-            reader announcements.
-          </p>
-          <p>
-            The component supports both horizontal and vertical orientations
-            using the <code>aria-orientation</code> attribute and CSS classes.
-          </p>
+          <div class="how-it-works">
+            <p>
+              This tab interface is built primarily using CSS with hidden radio
+              inputs to control tab states. The core functionality
+              (showing/hiding tab content and highlighting the active tab) works
+              without any JavaScript through CSS selectors.
+            </p>
+            <p>
+              The implementation uses the CSS sibling selector <code>~</code> to
+              show/hide content and highlight the active tab, making it
+              lightweight and performant.
+            </p>
+            <p>
+              <strong>The JavaScript's role:</strong> A minimal amount of
+              JavaScript is used solely for accessibility improvements:
+            </p>
+            <ol>
+              <li>
+                <strong>ARIA attribute management:</strong> Updates
+                <code>aria-selected</code> states dynamically when tabs change
+              </li>
+              <li>
+                <strong>Keyboard navigation:</strong> Enables arrow key
+                navigation between tabs (adapting to orientation)
+              </li>
+              <li>
+                <strong>Focus management:</strong> Moves focus to the newly
+                activated tab when switching with keyboard
+              </li>
+            </ol>
+            <p>
+              Without this JavaScript, the tabs would still function for mouse
+              users, but would lack proper keyboard accessibility and screen
+              reader announcements.
+            </p>
+            <p>
+              The component supports both horizontal and vertical orientations
+              using the <code>aria-orientation</code> attribute and CSS classes.
+            </p>
+          </div>
+
+          <h3>Accessibility Features</h3>
+          <div class="accessibility-info">
+            <h4>ARIA Attributes Explained</h4>
+            <ul>
+              <li>
+                <strong>role="tablist"</strong>: Identifies the container as a
+                collection of tabs
+              </li>
+              <li>
+                <strong>role="tab"</strong>: Identifies each tab button/trigger
+              </li>
+              <li>
+                <strong>role="tabpanel"</strong>: Identifies each tab content
+                panel
+              </li>
+              <li>
+                <strong>aria-orientation="horizontal/vertical"</strong>:
+                Indicates the layout direction of tabs
+              </li>
+              <li>
+                <strong>aria-selected="true/false"</strong>: Indicates which tab
+                is currently selected
+              </li>
+              <li>
+                <strong>aria-controls="panel-id"</strong>: Associates each tab
+                with the panel it controls
+              </li>
+              <li>
+                <strong>aria-labelledby="tab-id"</strong>: Associates each panel
+                with the tab that labels it
+              </li>
+              <li>
+                <strong>tabindex="0"</strong>: Makes tabs keyboard focusable
+              </li>
+            </ul>
+
+            <h4>Keyboard Navigation</h4>
+            <ul>
+              <li>
+                <strong>Tab key</strong>: Moves focus to the tabs and between
+                tabs and their panels
+              </li>
+              <li>
+                <strong>Right/Down arrows</strong>: Move to next tab (depends on
+                orientation)
+              </li>
+              <li>
+                <strong>Left/Up arrows</strong>: Move to previous tab (depends
+                on orientation)
+              </li>
+              <li>
+                <strong>Enter/Space</strong>: Activates the tab that currently
+                has keyboard focus
+              </li>
+            </ul>
+
+            <h4>Focus Management</h4>
+            <p>The minimal JavaScript enhances keyboard accessibility by:</p>
+            <ul>
+              <li>
+                Supporting arrow key navigation between tabs (adapting to
+                orientation)
+              </li>
+              <li>Automatically focusing the newly activated tab</li>
+              <li>Ensuring proper ARIA states are updated when tabs change</li>
+            </ul>
+
+            <h4>What Not To Add</h4>
+            <p>
+              For best accessibility practices, avoid these common mistakes:
+            </p>
+            <ul>
+              <li>
+                <strong>role="button"</strong> on tab elements: Not needed and
+                conflicts with <code>role="tab"</code>
+              </li>
+              <li>
+                <strong>aria-hidden="true"</strong> on inactive tab panels: The
+                CSS hiding is sufficient, and using aria-hidden would remove
+                them from the accessibility tree
+              </li>
+              <li>
+                <strong>tabindex="-1"</strong> on inactive tab elements: All
+                tabs should remain in the tab order for proper keyboard
+                navigation
+              </li>
+              <li>
+                <strong>Complex JavaScript</strong>: Adding unnecessary
+                JavaScript when CSS can handle the core functionality
+              </li>
+            </ul>
+
+            <h4>Additional Resources</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/bilal-23/no-js/tree/main/components/tabs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View this component on GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WAI-ARIA: Tab Panel Pattern
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MDN Web Docs: ARIA Tab Role
+                </a>
+              </li>
+            </ul>
+          </div>
 
           <h3>Implementation Code</h3>
           <div class="code-example">
@@ -385,130 +511,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });</code></pre>
-          </div>
-
-          <h3>Accessibility Features</h3>
-          <div class="accessibility-info">
-            <h4>ARIA Attributes Explained</h4>
-            <ul>
-              <li>
-                <strong>role="tablist"</strong>: Identifies the container as a
-                collection of tabs
-              </li>
-              <li>
-                <strong>role="tab"</strong>: Identifies each tab button/trigger
-              </li>
-              <li>
-                <strong>role="tabpanel"</strong>: Identifies each tab content
-                panel
-              </li>
-              <li>
-                <strong>aria-orientation="horizontal/vertical"</strong>:
-                Indicates the layout direction of tabs
-              </li>
-              <li>
-                <strong>aria-selected="true/false"</strong>: Indicates which tab
-                is currently selected
-              </li>
-              <li>
-                <strong>aria-controls="panel-id"</strong>: Associates each tab
-                with the panel it controls
-              </li>
-              <li>
-                <strong>aria-labelledby="tab-id"</strong>: Associates each panel
-                with the tab that labels it
-              </li>
-              <li>
-                <strong>tabindex="0"</strong>: Makes tabs keyboard focusable
-              </li>
-            </ul>
-
-            <h4>Keyboard Navigation</h4>
-            <ul>
-              <li>
-                <strong>Tab key</strong>: Moves focus to the tabs and between
-                tabs and their panels
-              </li>
-              <li>
-                <strong>Right/Down arrows</strong>: Move to next tab (depends on
-                orientation)
-              </li>
-              <li>
-                <strong>Left/Up arrows</strong>: Move to previous tab (depends
-                on orientation)
-              </li>
-              <li>
-                <strong>Enter/Space</strong>: Activates the tab that currently
-                has keyboard focus
-              </li>
-            </ul>
-
-            <h4>Focus Management</h4>
-            <p>The minimal JavaScript enhances keyboard accessibility by:</p>
-            <ul>
-              <li>
-                Supporting arrow key navigation between tabs (adapting to
-                orientation)
-              </li>
-              <li>Automatically focusing the newly activated tab</li>
-              <li>Ensuring proper ARIA states are updated when tabs change</li>
-            </ul>
-
-            <h4>What Not To Add</h4>
-            <p>
-              For best accessibility practices, avoid these common mistakes:
-            </p>
-            <ul>
-              <li>
-                <strong>role="button"</strong> on tab elements: Not needed and
-                conflicts with <code>role="tab"</code>
-              </li>
-              <li>
-                <strong>aria-hidden="true"</strong> on inactive tab panels: The
-                CSS hiding is sufficient, and using aria-hidden would remove
-                them from the accessibility tree
-              </li>
-              <li>
-                <strong>tabindex="-1"</strong> on inactive tab elements: All
-                tabs should remain in the tab order for proper keyboard
-                navigation
-              </li>
-              <li>
-                <strong>Complex JavaScript</strong>: Adding unnecessary
-                JavaScript when CSS can handle the core functionality
-              </li>
-            </ul>
-
-            <h4>Additional Resources</h4>
-            <ul>
-              <li>
-                <a
-                  href="https://github.com/bilal-23/no-js/tree/main/components/tabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View this component on GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WAI-ARIA: Tab Panel Pattern
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  MDN Web Docs: ARIA Tab Role
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

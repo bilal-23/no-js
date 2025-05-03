@@ -50,6 +50,86 @@
   max-width: 800px;
 }
 
+/* How It Works section styling */
+.how-it-works {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.how-it-works h3 {
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.how-it-works p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.how-it-works code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.how-it-works ol,
+.how-it-works ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.how-it-works li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Accessibility info section styling */
+.accessibility-info {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.accessibility-info h4 {
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.accessibility-info h4:first-child {
+  margin-top: 0;
+}
+
+.accessibility-info ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.accessibility-info li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.accessibility-info strong {
+  color: #333;
+  font-family: monospace;
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.accessibility-info code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
 /* Code blocks */
 .code-example {
   background: var(--secondary);
