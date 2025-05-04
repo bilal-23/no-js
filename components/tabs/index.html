@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Tabs | NoJS UI Components</title>
     <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -571,12 +574,29 @@ document.addEventListener('DOMContentLoaded', function() {
         );
         radioButtons.forEach((radio) => {
           radio.addEventListener("change", function () {
-            tabButtons.forEach((tab) => {
+            // Find all related tabs in the same group
+            const tabGroup = this.getAttribute("name");
+            const relatedTabs = document.querySelectorAll(
+              `.tab-button[for^="${tabGroup === "v-tab" ? "v-tab" : "tab"}"]`
+            );
+
+            relatedTabs.forEach((tab) => {
               const isSelected = tab.getAttribute("for") === this.id;
               tab.setAttribute("aria-selected", isSelected ? "true" : "false");
             });
           });
         });
+
+        // Handle mobile tab interface better by improving touch target behavior
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          tabButtons.forEach((button) => {
+            button.addEventListener("touchend", function (e) {
+              // Prevent double-firing with click events
+              e.preventDefault();
+              this.click();
+            });
+          });
+        }
       });
     </script>
   </body>

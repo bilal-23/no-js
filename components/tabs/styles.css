@@ -31,12 +31,10 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, outline 0.2s ease;
-  outline: none;
-  border: none;
+  transition: background-color 0.3s ease;
   width: 100%;
-  opacity: 1;
   text-align: center;
+  -webkit-tap-highlight-color: transparent; /* Prevent tap highlight on mobile */
 }
 
 /* Improved focus styles for keyboard navigation */
@@ -134,4 +132,127 @@ input[type="radio"] {
   flex: 1;
   height: 100%;
   overflow: auto;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  /* Make tab container responsive to screen width */
+  .tab-container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* Make horizontal tabs stack on mobile */
+  .tab-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  /* Adjust vertical tabs for mobile */
+  .tabs-vertical {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .tabs-vertical .tab-header {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust tab content padding */
+  .tab-content {
+    padding: 0.75rem;
+  }
+
+  /* Add more breathing room in the demo container */
+  .demo-container {
+    padding: 1rem 0.5rem;
+  }
+
+  /* Adjust tab button padding for better touch targets */
+  .tab-button {
+    padding: 12px 16px;
+  }
+
+  /* Add space between tab sections */
+  .tab-container {
+    margin-bottom: 2rem;
+  }
+
+  /* Improve readability of content */
+  .tab-content h2 {
+    font-size: 1.25rem;
+    margin-top: 0;
+  }
+
+  .tab-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .tab-button {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+
+  .component-demo .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .tab-header {
+    padding: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Handle landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Make horizontal tabs use flex-wrap to fit better in landscape */
+  .tab-header:not([aria-orientation="vertical"]) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* Adjust button width in landscape */
+  .tab-header:not([aria-orientation="vertical"]) .tab-button {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 120px;
+  }
+
+  /* Keep vertical tabs as is, but reduce the content padding */
+  .tabs-vertical .tab-content {
+    padding: 0.5rem;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tab-button {
+    padding: 12px 20px;
+  }
+
+  .tabs-vertical .tab-header {
+    width: 180px;
+  }
+}
+
+/* Print styles - ensure tabs are properly visible when printed */
+@media print {
+  .tab-content {
+    display: block !important;
+    page-break-inside: avoid;
+    margin-bottom: 1cm;
+  }
+
+  .tab-header {
+    display: none;
+  }
 }
