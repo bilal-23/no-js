@@ -1,0 +1,255 @@
+@import url("../component-base.css");
+
+/* Accordion styles */
+
+.demo-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.accordion-container {
+  height: auto;
+  width: 500px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  padding: 1rem 1.5rem;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text);
+  transition: var(--transition);
+  border-bottom: 1px solid var(--light-gray);
+  position: relative;
+  z-index: 1;
+}
+
+/* Add keyboard focus styles */
+.accordion-header:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.3);
+  background-color: rgba(179, 157, 219, 0.07);
+}
+
+.accordion-header:hover {
+  background-color: rgba(179, 157, 219, 0.07);
+}
+
+/* Visual indication for keyboard users */
+.accordion-header:focus {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--primary);
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion-item:last-child .accordion-header {
+  border-bottom: none;
+}
+
+/* Hide radio buttons but keep them accessible */
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Accordion content styling */
+.accordion-content {
+  display: none;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--white);
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Show content when accordion is active */
+input[type="radio"]:checked ~ .accordion-content,
+input[type="checkbox"]:checked ~ .accordion-content {
+  display: block;
+  padding: 1.5rem;
+  max-height: 300px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* Add accordion icon */
+.accordion-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon::before {
+  width: 16px;
+  height: 2px;
+  top: 7px;
+  left: 0;
+}
+
+.accordion-icon::after {
+  width: 2px;
+  height: 16px;
+  top: 0;
+  left: 7px;
+}
+
+/* Rotate plus to minus when active */
+input[type="radio"]:checked ~ .accordion-header .accordion-icon::after,
+input[type="checkbox"]:checked ~ .accordion-header .accordion-icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+/* Style for active accordion header */
+input[type="radio"]:checked ~ .accordion-header,
+input[type="checkbox"]:checked ~ .accordion-header {
+  background-color: rgba(179, 157, 219, 0.1);
+  color: var(--primary);
+  font-weight: 600;
+  border-bottom: none;
+}
+
+/* Update aria-expanded attribute via CSS (for visual indication only) */
+input[type="radio"]:checked ~ .accordion-header[aria-expanded="false"],
+input[type="checkbox"]:checked ~ .accordion-header[aria-expanded="false"] {
+  --pseudo-expanded: true;
+}
+
+input[type="radio"]:not(:checked) ~ .accordion-header[aria-expanded="true"],
+input[type="checkbox"]:not(:checked) ~ .accordion-header[aria-expanded="true"] {
+  --pseudo-expanded: false;
+}
+
+/* Using custom property as a visual indicator since we can't update aria attrs without JS */
+.accordion-header[aria-expanded="true"]::before,
+.accordion-header[style*="--pseudo-expanded: true"]::before {
+  content: attr(aria-expanded);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Animation for accordion content */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input[type="radio"]:checked ~ .accordion-content,
+input[type="checkbox"]:checked ~ .accordion-content {
+  animation: fadeDown 0.3s ease forwards;
+}
+
+/* Add keyboard support for accordion headers */
+.accordion-header:focus:active,
+.accordion-header:active {
+  background-color: rgba(179, 157, 219, 0.2);
+}
+
+/* Add a visible style for keyboard users to see which accordion has focus */
+.accordion-item:focus-within .accordion-header {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  z-index: 2;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .accordion-container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .accordion-header {
+    padding: 1rem;
+  }
+
+  input[type="radio"]:checked ~ .accordion-content,
+  input[type="checkbox"]:checked ~ .accordion-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-header {
+    font-size: 0.95rem;
+  }
+
+  .accordion-content {
+    font-size: 0.9rem;
+  }
+
+  .accordion-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .accordion-icon::before {
+    width: 14px;
+    top: 6px;
+  }
+
+  .accordion-icon::after {
+    height: 14px;
+    left: 6px;
+  }
+}
+
+/* High-contrast mode improvements */
+@media (forced-colors: active) {
+  .accordion-header {
+    border: 1px solid CanvasText;
+  }
+
+  .accordion-header:focus-visible {
+    outline: 2px solid Highlight;
+  }
+
+  .accordion-icon::before,
+  .accordion-icon::after {
+    background-color: CanvasText;
+  }
+}

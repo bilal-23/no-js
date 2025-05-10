@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Accordion | NoJS UI Components</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">NoJS UI</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="component-demo">
+      <div class="container">
+        <h1>Accordion</h1>
+        <p class="component-description">
+          An accessible accordion interface with minimal markup.
+        </p>
+
+        <div class="demo-container">
+          <h3>Single Active Accordion</h3>
+          <div
+            class="accordion-container"
+            role="region"
+            aria-label="Single active accordion example"
+          >
+            <div class="accordion-item">
+              <label
+                class="accordion-header"
+                for="accordion-1"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-controls="content-accordion-1"
+              >
+                <p>Accordion Item 1</p>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </label>
+              <input type="radio" name="accordion" id="accordion-1" />
+              <div class="accordion-content" id="content-accordion-1">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, reprehenderit? This content can be accessed with a
+                  screen reader and keyboard navigation.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <label
+                class="accordion-header"
+                for="accordion-2"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-controls="content-accordion-2"
+              >
+                <p>Accordion Item 2</p>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </label>
+              <input type="radio" name="accordion" id="accordion-2" />
+              <div class="accordion-content" id="content-accordion-2">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, reprehenderit? This panel shows how aria-expanded
+                  changes with the accordion state.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <label
+                class="accordion-header"
+                for="accordion-3"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-controls="content-accordion-3"
+              >
+                <p>Accordion Item 3</p>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </label>
+              <input type="radio" name="accordion" id="accordion-3" />
+              <div class="accordion-content" id="content-accordion-3">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, reprehenderit? You can press Enter or Space on the
+                  header to toggle this panel.
+                </p>
+              </div>
+            </div>
+          </div>
+          <h3>Multiple Active Accordions</h3>
+          <div
+            class="accordion-container"
+            role="region"
+            aria-label="Multiple active accordions example"
+          >
+            <div class="accordion-item">
+              <label
+                class="accordion-header"
+                for="m-accordion-1"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-controls="content-m-accordion-1"
+              >
+                <p>Accordion Item 1</p>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </label>
+              <input type="checkbox" name="m-accordion" id="m-accordion-1" />
+              <div class="accordion-content" id="content-m-accordion-1">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, reprehenderit? Multiple accordions can be open
+                  simultaneously in this group.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <label
+                class="accordion-header"
+                for="m-accordion-2"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-controls="content-m-accordion-2"
+              >
+                <p>Accordion Item 2</p>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </label>
+              <input type="checkbox" name="m-accordion" id="m-accordion-2" />
+              <div class="accordion-content" id="content-m-accordion-2">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, reprehenderit? This example uses checkboxes instead
+                  of radio buttons.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <label
+                class="accordion-header"
+                for="m-accordion-3"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-controls="content-m-accordion-3"
+              >
+                <p>Accordion Item 3</p>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </label>
+              <input type="checkbox" name="m-accordion" id="m-accordion-3" />
+              <div class="accordion-content" id="content-m-accordion-3">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, reprehenderit? Screen readers will announce the
+                  expanded state of each accordion header.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-info">
+          <h2>How It Works</h2>
+          <div class="how-it-works">
+            <p>
+              This accordion component is built primarily using HTML and CSS,
+              with minimal JavaScript added only for keyboard accessibility.
+            </p>
+            <p>
+              The implementation relies on hidden radio inputs (for
+              single-active accordions) and checkboxes (for multiple-active
+              accordions) to control the state. The CSS
+              <code>:checked</code> selector and general sibling combinator
+              (<code>~</code>) handle the showing/hiding of content.
+            </p>
+            <h3>Key Accessibility Features</h3>
+            <ul>
+              <li>
+                <strong>Keyboard navigation:</strong> All accordion headers are
+                focusable with <code>tabindex="0"</code>. Users can press Enter
+                or Space to toggle an accordion (requires JavaScript).
+              </li>
+              <li>
+                <strong>ARIA attributes:</strong> Proper
+                <code>aria-expanded</code>, <code>aria-controls</code>, and
+                <code>role</code> attributes ensure screen readers can
+                understand the component's state and structure.
+              </li>
+              <li>
+                <strong>Focus management:</strong> Visual focus indicators help
+                keyboard users understand where they are in the component.
+              </li>
+              <li>
+                <strong>Screen reader support:</strong> The component structure
+                is semantically correct for optimal screen reader announcements.
+              </li>
+            </ul>
+
+            <h3>Why JavaScript is Necessary</h3>
+            <p>
+              While we've minimized JavaScript usage, there are key limitations
+              with a CSS-only approach:
+            </p>
+            <ol>
+              <li>
+                <strong>Keyboard interaction:</strong> CSS cannot detect
+                keyboard events like Enter or Space. Only JavaScript can listen
+                for these events and trigger the accordion toggle.
+              </li>
+              <li>
+                <strong>ARIA state updates:</strong> CSS cannot dynamically
+                update ARIA attributes like <code>aria-expanded</code> when the
+                accordion state changes.
+              </li>
+              <li>
+                <strong>Non-native elements:</strong> Our accordion uses
+                <code>&lt;label&gt;</code> elements, which don't have built-in
+                keyboard interaction like true
+                <code>&lt;button&gt;</code> elements would.
+              </li>
+            </ol>
+            <p>
+              Our JavaScript is minimal (only ~30 lines) and focuses solely on:
+            </p>
+            <ul>
+              <li>
+                Handling keyboard events (Enter/Space) to toggle accordions
+              </li>
+              <li>
+                Updating the <code>aria-expanded</code> attribute to match the
+                accordion's state
+              </li>
+            </ul>
+            <p>
+              Without this JavaScript, the accordion would still work for mouse
+              users but would fail accessibility requirements for keyboard-only
+              users.
+            </p>
+          </div>
+
+          <h3>Accessibility Features</h3>
+          <div class="accessibility-info">
+            <h4>ARIA Attributes Explained</h4>
+            <ul>
+              <li>
+                <strong>role="region"</strong>: Identifies the container as a
+                landmark region
+              </li>
+              <li>
+                <strong>role="button"</strong>: Indicates that the header acts
+                as a button
+              </li>
+              <li>
+                <strong>aria-expanded="true/false"</strong>: Indicates whether
+                the accordion panel is expanded or collapsed
+              </li>
+              <li>
+                <strong>aria-controls="ID"</strong>: Associates the header with
+                the panel it controls
+              </li>
+              <li>
+                <strong>aria-hidden="true"</strong>: Applied to decorative
+                elements that should be ignored by screen readers
+              </li>
+              <li>
+                <strong>tabindex="0"</strong>: Makes the accordion headers
+                keyboard focusable
+              </li>
+            </ul>
+
+            <h4>Keyboard Navigation</h4>
+            <ul>
+              <li>
+                <strong>Tab key</strong>: Moves focus between accordion headers
+              </li>
+              <li>
+                <strong>Enter/Space</strong>: Toggles the accordion panel when
+                focus is on a header
+              </li>
+            </ul>
+
+            <h4>CSS-only Approach</h4>
+            <p>
+              While JavaScript can enhance the accessibility of accordions, this
+              component demonstrates how to implement core accessibility
+              features without it:
+            </p>
+            <ul>
+              <li>
+                Using <code>:focus-visible</code> for visible keyboard focus
+                indicators
+              </li>
+              <li>Structuring HTML to maintain a logical tab order</li>
+              <li>
+                Leveraging ARIA attributes for screen reader announcements
+              </li>
+              <li>Ensuring sufficient color contrast and touch targets</li>
+            </ul>
+          </div>
+
+          <h3>Implementation Code</h3>
+          <div class="code-example">
+            <h4>HTML</h4>
+            <pre><code class="language-html">&lt;!-- Single active accordion (radio buttons) --&gt;
+&lt;div class="accordion-container" role="region" aria-label="Accordion group"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;label class="accordion-header" for="accordion-1" tabindex="0" role="button" 
+           aria-expanded="false" aria-controls="content-accordion-1"&gt;
+      &lt;p&gt;Accordion Item 1&lt;/p&gt;
+      &lt;span class="accordion-icon" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;input type="radio" name="accordion" id="accordion-1" /&gt;
+    &lt;div class="accordion-content" id="content-accordion-1"&gt;
+      &lt;p&gt;Content for accordion item 1&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Additional accordion items with the same structure --&gt;
+&lt;/div&gt;
+
+&lt;!-- Multiple active accordions (checkboxes) --&gt;
+&lt;div class="accordion-container" role="region" aria-label="Multiple accordions"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;label class="accordion-header" for="m-accordion-1" tabindex="0" role="button" 
+           aria-expanded="false" aria-controls="content-m-accordion-1"&gt;
+      &lt;p&gt;Accordion Item 1&lt;/p&gt;
+      &lt;span class="accordion-icon" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;input type="checkbox" name="m-accordion" id="m-accordion-1" /&gt;
+    &lt;div class="accordion-content" id="content-m-accordion-1"&gt;
+      &lt;p&gt;Content for accordion item 1&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Additional accordion items with the same structure --&gt;
+&lt;/div&gt;</code></pre>
+
+            <h4>Keyboard Accessibility JavaScript (Required)</h4>
+            <pre><code class="language-javascript">// This script enables keyboard interaction (Enter/Space) for accordion headers
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all accordion headers
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  
+  // Add keyboard event listeners to all accordion headers
+  accordionHeaders.forEach(header => {
+    // Handle keyboard events (Enter and Space)
+    header.addEventListener('keydown', function(e) {
+      // Trigger the accordion when Enter or Space is pressed
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault(); // Prevent scrolling on Space
+        
+        // Simulate a click on the header
+        this.click();
+        
+        // Get the associated input
+        const inputId = this.getAttribute('for');
+        const input = document.getElementById(inputId);
+        
+        // Update aria-expanded state
+        const isExpanded = input.checked;
+        this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      }
+    });
+    
+    // Also update aria-expanded when clicked with mouse
+    header.addEventListener('click', function() {
+      // Get the associated input
+      const inputId = this.getAttribute('for');
+      const input = document.getElementById(inputId);
+      
+      // We need to wait a moment (10ms, not 10s) for the checked state to update
+      // This tiny delay ensures the browser has updated the input's checked state before we read it
+      setTimeout(() => {
+        const isExpanded = input.checked;
+        this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      }, 10);
+    });
+  });
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Minimal JavaScript for keyboard accessibility -->
+    <script>
+      // This script enables keyboard interaction (Enter/Space) for accordion headers
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all accordion headers
+        const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+        // Add keyboard event listeners to all accordion headers
+        accordionHeaders.forEach((header) => {
+          // Handle keyboard events (Enter and Space)
+          header.addEventListener("keydown", function (e) {
+            // Trigger the accordion when Enter or Space is pressed
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault(); // Prevent scrolling on Space
+
+              // Simulate a click on the header
+              this.click();
+
+              // Get the associated input
+              const inputId = this.getAttribute("for");
+              const input = document.getElementById(inputId);
+
+              // Update aria-expanded state
+              const isExpanded = input.checked;
+              this.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+            }
+          });
+
+          // Also update aria-expanded when clicked with mouse
+          header.addEventListener("click", function () {
+            // Get the associated input
+            const inputId = this.getAttribute("for");
+            const input = document.getElementById(inputId);
+
+            // We need to wait a moment (10ms) for the checked state to update
+            // This tiny delay ensures the browser has updated the input's checked state before we read it
+            setTimeout(() => {
+              const isExpanded = input.checked;
+              this.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+            }, 10);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
