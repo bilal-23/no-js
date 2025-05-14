@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Tooltip | NoJS UI Components</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">NoJS UI</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="component-demo">
+      <div class="container">
+        <h1>Tooltip</h1>
+        <p class="component-description">
+          A tooltip component built without JavaScript.
+        </p>
+
+        <div class="demo-container">
+          <h3>Tooltip</h3>
+          <div class="tooltip-container">
+            <div class="tooltip">
+              <button
+                class="tooltip-trigger"
+                aria-describedby="tooltip-1"
+                tabindex="0"
+              >
+                Hover me
+              </button>
+              <span class="tooltiptext" id="tooltip-1" role="tooltip"
+                >This is a tooltip that appears on top</span
+              >
+            </div>
+
+            <div class="tooltip position-right">
+              <button
+                class="tooltip-trigger"
+                aria-describedby="tooltip-2"
+                tabindex="0"
+              >
+                Right tooltip
+              </button>
+              <span class="tooltiptext" id="tooltip-2" role="tooltip"
+                >This tooltip appears on the right side</span
+              >
+            </div>
+
+            <div class="tooltip position-left">
+              <button
+                class="tooltip-trigger"
+                aria-describedby="tooltip-3"
+                tabindex="0"
+              >
+                Left tooltip
+              </button>
+              <span class="tooltiptext" id="tooltip-3" role="tooltip"
+                >This tooltip appears on the left side</span
+              >
+            </div>
+
+            <div class="tooltip position-bottom">
+              <button
+                class="tooltip-trigger"
+                aria-describedby="tooltip-4"
+                tabindex="0"
+              >
+                Bottom tooltip
+              </button>
+              <span class="tooltiptext" id="tooltip-4" role="tooltip"
+                >This tooltip appears at the bottom</span
+              >
+            </div>
+          </div>
+          <p class="accessibility-note">
+            <strong>Keyboard users:</strong> Use Tab to navigate between
+            tooltips. Tooltips appear automatically when focused.
+          </p>
+
+          <h3>Tooltips in Form Fields</h3>
+          <div class="form-example">
+            <div class="form-field">
+              <label for="username">Username</label>
+              <div class="input-with-tooltip">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  aria-describedby="username-tooltip"
+                />
+                <div class="tooltip tooltip-help">
+                  <button
+                    class="tooltip-trigger tooltip-icon"
+                    aria-describedby="username-tooltip"
+                    tabindex="0"
+                    aria-label="Help for username field"
+                  >
+                    ?
+                  </button>
+                  <span class="tooltiptext" id="username-tooltip" role="tooltip"
+                    >Username must be 3-20 characters and contain only letters,
+                    numbers, and underscores.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="password">Password</label>
+              <div class="input-with-tooltip">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  aria-describedby="password-tooltip"
+                />
+                <div class="tooltip tooltip-help">
+                  <button
+                    class="tooltip-trigger tooltip-icon"
+                    aria-describedby="password-tooltip"
+                    tabindex="0"
+                    aria-label="Help for password field"
+                  >
+                    ?
+                  </button>
+                  <span class="tooltiptext" id="password-tooltip" role="tooltip"
+                    >Password must be at least 8 characters and include a
+                    number, a special character, and both upper and lowercase
+                    letters.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-info">
+          <h2>How It Works</h2>
+          <div class="how-it-works">
+            <p>
+              This tooltip component is built using only HTML and CSS, with no
+              JavaScript required. It demonstrates how to create accessible,
+              interactive UI components using CSS pseudo-classes and
+              positioning.
+            </p>
+            <p>
+              The implementation uses the CSS <code>:hover</code> and
+              <code>:focus</code> pseudo-classes to control the visibility of
+              the tooltip content. Various tooltip positions are achieved
+              through CSS positioning and transforms.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+              <li>
+                <strong>Pure CSS:</strong> No JavaScript needed for basic
+                functionality
+              </li>
+              <li>
+                <strong>Multiple Positions:</strong> Support for top, right,
+                left, and bottom tooltip positions
+              </li>
+              <li>
+                <strong>Keyboard Accessible:</strong> Tooltips appear on focus
+                for keyboard users
+              </li>
+              <li>
+                <strong>Customizable:</strong> Easy to style with CSS variables
+              </li>
+              <li>
+                <strong>Small Footprint:</strong> Minimal markup and CSS
+                required
+              </li>
+            </ul>
+          </div>
+
+          <h3>Accessibility Features</h3>
+          <div class="accessibility-info">
+            <p>
+              This tooltip component includes several accessibility features:
+            </p>
+            <ul>
+              <li>
+                <strong>ARIA Attributes:</strong> Using
+                <code>aria-describedby</code> to associate tooltip text with its
+                trigger
+              </li>
+              <li>
+                <strong>Role Definitions:</strong> Proper
+                <code>role="tooltip"</code> for screen reader recognition
+              </li>
+              <li>
+                <strong>Semantic HTML:</strong> Using
+                <code>button</code> elements for interactive triggers
+              </li>
+              <li>
+                <strong>Keyboard Accessibility:</strong> Tooltips appear on
+                focus, not just hover
+              </li>
+              <li>
+                <strong>Focus Indicators:</strong> Clear visual focus indicators
+                for keyboard navigation
+              </li>
+              <li>
+                <strong>Sufficient Contrast:</strong> Text and background colors
+                meet WCAG contrast requirements
+              </li>
+              <li>
+                <strong>Responsive Design:</strong> Works on various screen
+                sizes
+              </li>
+              <li>
+                <strong>Tab Order:</strong> Logical tab order for keyboard
+                navigation
+              </li>
+              <li>
+                <strong>Visual Instructions:</strong> Visible instructions for
+                keyboard users
+              </li>
+              <li>
+                <strong>No Mouse Dependency:</strong> All functionality
+                available without a mouse
+              </li>
+            </ul>
+            <p>
+              The CSS-only implementation means that screen readers will
+              automatically read the tooltip content when a user focuses on a
+              trigger element, thanks to the
+              <code>aria-describedby</code> attribute.
+            </p>
+
+            <h4>Additional Resources</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/bilal-23/no-js/tree/main/components/tooltip"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View this component on GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WAI-ARIA: Tooltip Pattern
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tooltip_role"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MDN Web Docs: ARIA Tooltip Role
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <h3>Implementation Code</h3>
+          <div class="code-example">
+            <h4>HTML with ARIA attributes</h4>
+            <pre><code class="language-html">&lt;!-- Basic Tooltip --&gt;
+&lt;div class="tooltip"&gt;
+  &lt;button class="tooltip-trigger" aria-describedby="tooltip-1" tabindex="0"&gt;Hover me&lt;/button&gt;
+  &lt;span class="tooltiptext" id="tooltip-1" role="tooltip"&gt;This is a tooltip&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Right Positioned Tooltip --&gt;
+&lt;div class="tooltip position-right"&gt;
+  &lt;button class="tooltip-trigger" aria-describedby="tooltip-2" tabindex="0"&gt;Right tooltip&lt;/button&gt;
+  &lt;span class="tooltiptext" id="tooltip-2" role="tooltip"&gt;This tooltip appears on the right side&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+            <h4>CSS with accessibility support</h4>
+            <pre><code class="language-css">/* Tooltip Container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 2rem;
+}
+
+/* Tooltip Trigger - using button for better semantics */
+.tooltip-trigger {
+  background-color: var(--primary-color, #0077cc);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Tooltip Text */
+.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  pointer-events: none; /* Prevents tooltip from blocking interactions */
+}
+
+/* Show the tooltip on hover AND focus for accessibility */
+.tooltip:hover .tooltiptext,
+.tooltip-trigger:focus + .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Accessible focus indicator - high contrast */
+.tooltip-trigger:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--primary-color, #0077cc);
+}
+
+/* Different tooltip positions with appropriate CSS */
+.tooltip.position-right .tooltiptext {
+  top: 50%;
+  left: 110%;
+  bottom: auto;
+  transform: translateY(-50%);
+}</code></pre>
+
+            <h4>Accessibility Best Practices for Tooltips</h4>
+            <ul>
+              <li>
+                <strong>Use semantic HTML:</strong> Prefer
+                <code>&lt;button&gt;</code> elements for interactive tooltips
+              </li>
+              <li>
+                <strong>Include ARIA attributes:</strong>
+                <code>aria-describedby</code> connects the tooltip text to the
+                trigger
+              </li>
+              <li>
+                <strong>Add proper roles:</strong>
+                <code>role="tooltip"</code> helps screen readers identify
+                tooltip content
+              </li>
+              <li>
+                <strong>Support keyboard navigation:</strong> Ensure tooltips
+                appear on focus, not just on hover
+              </li>
+              <li>
+                <strong>Use unique IDs:</strong> Each tooltip needs a unique ID
+                for proper <code>aria-describedby</code> references
+              </li>
+              <li>
+                <strong>Add high contrast focus states:</strong> Make focus
+                indicators clearly visible
+              </li>
+              <li>
+                <strong>Ensure color contrast:</strong> Text in tooltips should
+                meet WCAG contrast requirements
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
