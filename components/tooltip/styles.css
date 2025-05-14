@@ -7,11 +7,20 @@
   align-items: center;
 }
 
+.tooltip-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Tooltip Container */
 .tooltip {
   position: relative;
   display: inline-block;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 /* Tooltip Trigger */
