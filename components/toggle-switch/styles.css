@@ -1,0 +1,294 @@
+@import url("../component-base.css");
+
+.demo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.toggle-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Toggle Switch Container */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide the default checkbox */
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The switch track (background) */
+.toggle-label {
+  display: block;
+  width: 3.5rem;
+  height: 1.75rem;
+  border-radius: 1.75rem;
+  background-color: var(--light-gray);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  /* Add a subtle border for better definition */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* The switch button (the circle) */
+.toggle-button {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: var(--white);
+  transition: var(--transition);
+  /* Add a subtle shadow for depth */
+  box-shadow: var(--shadow);
+}
+
+/* When checked - change track color */
+.toggle-input:checked + .toggle-label {
+  background: linear-gradient(135deg, var(--primary), #7c4dff);
+}
+
+/* When checked - move the button */
+.toggle-input:checked + .toggle-label .toggle-button {
+  transform: translateX(1.75rem);
+}
+
+/* Focus styles for accessibility */
+.toggle-input:focus-visible + .toggle-label {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Toggle Switch with Text Label */
+.toggle-switch-with-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 200px;
+}
+
+.toggle-switch-with-label .toggle-label {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.toggle-text {
+  margin-left: 4rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Different sizes for toggle switches */
+.toggle-switch-small .toggle-label {
+  width: 2.5rem;
+  height: 1.25rem;
+}
+
+.toggle-switch-small .toggle-button {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.toggle-switch-small .toggle-input:checked + .toggle-label .toggle-button {
+  transform: translateX(1.25rem);
+}
+
+.toggle-switch-large .toggle-label {
+  width: 4.5rem;
+  height: 2.25rem;
+}
+
+.toggle-switch-large .toggle-button {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.toggle-switch-large .toggle-input:checked + .toggle-label .toggle-button {
+  transform: translateX(2.25rem);
+}
+
+/* Hover effects for better UX */
+.toggle-label:hover {
+  background-color: #d1d1d1;
+}
+
+.toggle-input:checked + .toggle-label:hover {
+  background: linear-gradient(135deg, var(--primary), #6c3ddf);
+  box-shadow: 0 5px 15px rgba(124, 77, 255, 0.2);
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Form example styling */
+.form-example {
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: none;
+}
+
+.form-example legend {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-field .toggle-switch-with-label {
+  width: 100%;
+}
+
+.form-field .toggle-text {
+  flex: 1;
+}
+
+.form-field:last-child {
+  margin-bottom: 0;
+}
+
+/* Accessibility note */
+.accessibility-note {
+  background-color: var(--light-gray);
+  border-left: 4px solid var(--primary);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Disabled state */
+.toggle-input:disabled + .toggle-label {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .toggle-label {
+    border: 1px solid;
+  }
+
+  .toggle-button {
+    background-color: ButtonFace;
+    border: 1px solid ButtonText;
+  }
+
+  .toggle-input:checked + .toggle-label {
+    background-color: Highlight;
+  }
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .toggle-button,
+  .toggle-label {
+    transition: none;
+  }
+}
+
+/* Touch device optimization */
+@media (hover: none) and (pointer: coarse) {
+  .toggle-label {
+    height: 2rem; /* Larger touch target */
+  }
+
+  .toggle-button {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .toggle-switch-small .toggle-label {
+    height: 1.5rem;
+  }
+
+  .toggle-switch-small .toggle-button {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .toggle-container {
+    gap: 3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 2rem;
+  }
+
+  .toggle-switch-with-label {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .toggle-text {
+    margin-left: 0;
+    order: -1;
+  }
+
+  .form-example {
+    padding: 1.2rem;
+  }
+
+  .form-field .toggle-switch-with-label {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .toggle-container {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .form-example {
+    padding: 1rem;
+  }
+}

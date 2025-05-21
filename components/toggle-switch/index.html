@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Toggle Switch | NoJS UI Components</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">NoJS UI</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="component-demo">
+      <div class="container">
+        <h1>Toggle Switch</h1>
+        <p class="component-description">
+          An accessible toggle switch component built with HTML, CSS, and
+          minimal JavaScript.
+        </p>
+
+        <div class="demo-container">
+          <h3>Basic Toggle Switches</h3>
+          <div
+            class="toggle-container"
+            role="group"
+            aria-labelledby="basic-toggles-label"
+          >
+            <span id="basic-toggles-label" class="sr-only"
+              >Basic toggle switches</span
+            >
+            <div class="toggle-switch">
+              <input
+                type="checkbox"
+                id="switch1"
+                class="toggle-input"
+                aria-describedby="switch1-desc"
+              />
+              <label
+                for="switch1"
+                class="toggle-label"
+                role="switch"
+                aria-checked="false"
+                tabindex="0"
+              >
+                <span class="toggle-button"></span>
+                <span class="sr-only">Toggle switch</span>
+              </label>
+              <span id="switch1-desc" class="sr-only"
+                >Off position toggle switch example</span
+              >
+            </div>
+
+            <div class="toggle-switch">
+              <input
+                type="checkbox"
+                id="switch2"
+                class="toggle-input"
+                checked
+                aria-describedby="switch2-desc"
+              />
+              <label
+                for="switch2"
+                class="toggle-label"
+                role="switch"
+                aria-checked="true"
+                tabindex="0"
+              >
+                <span class="toggle-button"></span>
+                <span class="sr-only">Toggle switch</span>
+              </label>
+              <span id="switch2-desc" class="sr-only"
+                >On position toggle switch example</span
+              >
+            </div>
+          </div>
+
+          <p class="accessibility-note" id="keyboard-instructions">
+            <strong>Keyboard users:</strong> Use Tab to navigate between toggle
+            switches and Space to toggle them on and off.
+          </p>
+        </div>
+
+        <div class="component-info">
+          <h2>How It Works</h2>
+          <div class="how-it-works">
+            <p>
+              This toggle switch component combines HTML, CSS, and minimal
+              JavaScript to create an accessible switch control. The
+              implementation uses a hidden checkbox input with a styled label to
+              create the visual appearance of a switch.
+            </p>
+            <p>
+              The component uses both native HTML attributes and ARIA attributes
+              to ensure maximum compatibility across different screen readers
+              and assistive technologies.
+            </p>
+
+            <h3>Key Accessibility Features</h3>
+            <ul>
+              <li>
+                <strong>Keyboard navigation:</strong> All toggle switches are
+                focusable with <code>tabindex="0"</code>. Users can press Space
+                or Enter to toggle the switch.
+              </li>
+              <li>
+                <strong>ARIA attributes:</strong> Proper
+                <code>role="switch"</code>, <code>aria-checked</code>, and
+                <code>aria-describedby</code>
+                attributes ensure screen readers can understand the component's
+                state and purpose.
+              </li>
+              <li>
+                <strong>Dual state management:</strong> Uses both native
+                <code>checked</code> attribute and <code>aria-checked</code> for
+                maximum compatibility.
+              </li>
+              <li>
+                <strong>Screen reader support:</strong> The component structure
+                is semantically correct for optimal screen reader announcements.
+              </li>
+            </ul>
+
+            <h3>Why JavaScript is Necessary</h3>
+            <p>
+              While we've minimized JavaScript usage, there are key limitations
+              with a CSS-only approach:
+            </p>
+            <ol>
+              <li>
+                <strong>Keyboard interaction:</strong> CSS cannot detect
+                keyboard events like Enter or Space. Only JavaScript can listen
+                for these events and trigger the toggle.
+              </li>
+              <li>
+                <strong>ARIA state updates:</strong> CSS cannot dynamically
+                update ARIA attributes like <code>aria-checked</code> when the
+                switch state changes.
+              </li>
+              <li>
+                <strong>State synchronization:</strong> JavaScript ensures both
+                the native <code>checked</code> attribute and
+                <code>aria-checked</code>
+                stay in sync.
+              </li>
+            </ol>
+            <p>Our JavaScript is minimal and focuses solely on:</p>
+            <ul>
+              <li>Handling keyboard events (Enter/Space) to toggle switches</li>
+              <li>
+                Updating the <code>aria-checked</code> attribute to match the
+                switch's state
+              </li>
+              <li>
+                Keeping the native <code>checked</code> attribute and ARIA
+                states synchronized
+              </li>
+            </ul>
+            <p>
+              Without this JavaScript, the toggle switch would still work for
+              mouse users but would fail accessibility requirements for
+              keyboard-only users.
+            </p>
+          </div>
+
+          <h3>Accessibility Features</h3>
+          <div class="accessibility-info">
+            <p>
+              This toggle switch component includes several accessibility
+              features:
+            </p>
+            <ul>
+              <li>
+                <strong>Semantic HTML:</strong> Using native checkbox inputs for
+                proper form submission and keyboard accessibility
+              </li>
+              <li>
+                <strong>Proper Labels:</strong> Each toggle is associated with a
+                label for screen reader support
+              </li>
+              <li>
+                <strong>Screen Reader Text:</strong> Hidden text provides
+                context for screen reader users
+              </li>
+              <li>
+                <strong>Keyboard Accessibility:</strong> Toggles can be
+                activated with the Space key when focused
+              </li>
+              <li>
+                <strong>Focus Indicators:</strong> Clear visual focus indicators
+                for keyboard navigation
+              </li>
+              <li>
+                <strong>Sufficient Contrast:</strong> Colors meet WCAG contrast
+                requirements
+              </li>
+              <li>
+                <strong>Touch-friendly:</strong> Adequately sized touch targets
+                for mobile users
+              </li>
+            </ul>
+
+            <h4>ARIA Implementation</h4>
+            <p>
+              The toggle switch component implements several ARIA attributes to
+              ensure proper accessibility:
+            </p>
+            <ul>
+              <li>
+                <strong><code>role="switch"</code>:</strong> Applied to the
+                label element to indicate that it functions as a switch control,
+                similar to a light switch. This helps screen readers understand
+                the component's purpose and behavior.
+              </li>
+              <li>
+                <strong>Dual State Management:</strong> We use both the native
+                <code>checked</code> attribute on the input and
+                <code>aria-checked</code> on the label with
+                <code>role="switch"</code>. This ensures maximum compatibility
+                across different screen readers and assistive technologies:
+                <ul>
+                  <li>
+                    The native <code>checked</code> attribute works with the
+                    checkbox input
+                  </li>
+                  <li>
+                    The <code>aria-checked</code> attribute works with the
+                    <code>role="switch"</code> on the label
+                  </li>
+                  <li>Both states are kept in sync through JavaScript</li>
+                </ul>
+              </li>
+              <li>
+                <strong><code>aria-describedby</code>:</strong> Used to
+                associate descriptive text with each toggle switch, providing
+                additional context for screen reader users about the purpose of
+                each switch.
+              </li>
+              <li>
+                <strong><code>tabindex="0"</code>:</strong> Added to the label
+                to ensure it's focusable and can be activated using keyboard
+                navigation.
+              </li>
+              <li>
+                <strong><code>role="group"</code>:</strong> Applied to the
+                container of multiple toggle switches to indicate that they form
+                a logical group.
+              </li>
+              <li>
+                <strong><code>aria-labelledby</code>:</strong> Used on the group
+                container to associate it with a heading that describes the
+                group of toggle switches.
+              </li>
+            </ul>
+          </div>
+
+          <h3>Implementation Code</h3>
+          <div class="code-example">
+            <h4>HTML Structure</h4>
+            <pre><code class="language-html">&lt;!-- Basic Toggle Switch --&gt;
+&lt;div class="toggle-switch"&gt;
+  &lt;input type="checkbox" id="switch1" class="toggle-input" aria-describedby="switch1-desc" /&gt;
+  &lt;label for="switch1" class="toggle-label" role="switch" aria-checked="false" tabindex="0"&gt;
+    &lt;span class="toggle-button"&gt;&lt;/span&gt;
+    &lt;span class="sr-only"&gt;Toggle switch&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;span id="switch1-desc" class="sr-only"&gt;Toggle switch description&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+            <h4>CSS Implementation</h4>
+            <pre><code class="language-css">/* Toggle Switch Container */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide the default checkbox */
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The switch track (background) */
+.toggle-label {
+  display: block;
+  width: 3.5rem;
+  height: 1.75rem;
+  border-radius: 1.75rem;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+/* The switch button (the circle) */
+.toggle-button {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+/* When checked - change track color */
+.toggle-input:checked + .toggle-label,
+.toggle-label[aria-checked="true"] {
+  background-color: var(--primary-color, #0077cc);
+}
+
+/* When checked - move the button */
+.toggle-input:checked + .toggle-label .toggle-button,
+.toggle-label[aria-checked="true"] .toggle-button {
+  transform: translateX(1.75rem);
+}
+
+/* Focus styles for accessibility */
+.toggle-input:focus-visible + .toggle-label,
+.toggle-label:focus-visible {
+  outline: 2px solid var(--primary-color, #0077cc);
+  outline-offset: 2px;
+}</code></pre>
+
+            <h4>JavaScript Implementation</h4>
+            <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", function () {
+  const toggleLabels = document.querySelectorAll('label[role="switch"]');
+  
+  toggleLabels.forEach((label) => {
+    // Handle click events
+    label.addEventListener("click", function (e) {
+      e.preventDefault();
+      const input = document.getElementById(this.getAttribute("for"));
+      if (input) {
+        input.checked = !input.checked;
+        // Update aria-checked to match the checked state
+        this.setAttribute("aria-checked", input.checked);
+      }
+    });
+    
+    // Handle keyboard events (Space and Enter)
+    label.addEventListener("keydown", function (e) {
+      if (e.key === " " || e.key === "Enter") {
+        e.preventDefault();
+        const input = document.getElementById(this.getAttribute("for"));
+        if (input) {
+          input.checked = !input.checked;
+          // Update aria-checked to match the checked state
+          this.setAttribute("aria-checked", input.checked);
+        }
+      }
+    });
+  });
+});</code></pre>
+          </div>
+
+          <h3>Additional Resources</h3>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/bilal-23/no-js/tree/main/components/toggle-switch"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View this component on GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.w3.org/WAI/ARIA/apg/patterns/switch/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WAI-ARIA: Switch Pattern
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MDN Web Docs: Checkbox Input
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script>
+      // Update toggle state and ARIA attributes when clicked or keyboard activated
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleLabels = document.querySelectorAll('label[role="switch"]');
+
+        toggleLabels.forEach((label) => {
+          // Handle click events
+          label.addEventListener("click", function (e) {
+            e.preventDefault();
+            const input = document.getElementById(this.getAttribute("for"));
+            if (input) {
+              input.checked = !input.checked;
+              // Update aria-checked to match the checked state
+              this.setAttribute("aria-checked", input.checked);
+            }
+          });
+
+          // Handle keyboard events (Space and Enter)
+          label.addEventListener("keydown", function (e) {
+            if (e.key === " " || e.key === "Enter") {
+              e.preventDefault();
+              const input = document.getElementById(this.getAttribute("for"));
+              if (input) {
+                input.checked = !input.checked;
+                // Update aria-checked to match the checked state
+                this.setAttribute("aria-checked", input.checked);
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
