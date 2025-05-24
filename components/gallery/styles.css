@@ -1,0 +1,451 @@
+@import url("../component-base.css");
+
+/* Override demo-container layout for gallery */
+.demo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: auto;
+}
+
+.demo-container h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--primary);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Gallery Container */
+.gallery {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Hide radio buttons visually but keep them keyboard accessible */
+.gallery-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Main Slides Container */
+.gallery-slides {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+/* Individual Slides */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Slide Captions */
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--white);
+  padding: 2rem 1.5rem 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.slide-caption h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.slide-caption p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Show active slide */
+#img1:checked ~ .gallery-slides .slide[data-slide="1"],
+#img2:checked ~ .gallery-slides .slide[data-slide="2"],
+#img3:checked ~ .gallery-slides .slide[data-slide="3"],
+#img4:checked ~ .gallery-slides .slide[data-slide="4"],
+#img5:checked ~ .gallery-slides .slide[data-slide="5"],
+#img6:checked ~ .gallery-slides .slide[data-slide="6"] {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Show caption on hover */
+.slide:hover .slide-caption {
+  transform: translateY(0);
+}
+
+/* Carousel Controls (Previous/Next) */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.carousel-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 24px;
+  font-weight: bold;
+  pointer-events: auto;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.carousel-btn-prev {
+  left: 1rem;
+}
+
+.carousel-btn-next {
+  right: 1rem;
+}
+
+/* Slide Picker Controls (Dots) */
+.slide-picker {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--light-gray);
+}
+
+.slide-picker-btn {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.slide-picker-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
+}
+
+.slide-picker-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Active slide picker styling - Updated for aria-current */
+.slide-picker-btn[aria-current="true"] {
+  background: var(--primary);
+  transform: scale(1.3);
+}
+
+/* Active slide picker indicator */
+.slide-picker-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 6px;
+  height: 6px;
+  background: var(--white);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  opacity: 0;
+}
+
+.slide-picker-btn[aria-current="true"]::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Accessibility note styling */
+.accessibility-note {
+  background-color: var(--light-gray);
+  border-left: 4px solid var(--primary);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
+  max-width: 800px;
+}
+
+/* Accessibility detail sections styling */
+.accessibility-detail {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.accessibility-detail h4 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.accessibility-detail p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.accessibility-detail ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.accessibility-detail li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.accessibility-detail pre {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+
+.accessibility-detail code {
+  background: rgba(124, 77, 255, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.accessibility-detail pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .slide-picker-btn {
+    border: 2px solid ButtonText;
+  }
+
+  .slide-picker-btn[aria-selected="true"] {
+    background-color: Highlight;
+  }
+
+  .slide {
+    border: 1px solid ButtonText;
+  }
+
+  .carousel-btn {
+    border: 2px solid ButtonText;
+  }
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .slide-picker-btn,
+  .carousel-btn,
+  .slide-caption {
+    transition: none;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-slides {
+    height: 400px;
+  }
+
+  .slide-picker {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .slide-picker-btn {
+    width: 14px;
+    height: 14px;
+  }
+
+  .slide-caption {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .slide-caption h4 {
+    font-size: 1.1rem;
+  }
+
+  .slide-caption p {
+    font-size: 0.8rem;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-slides {
+    height: 300px;
+  }
+
+  .slide-picker {
+    padding: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .slide-picker-btn {
+    width: 12px;
+    height: 12px;
+  }
+
+  .slide-caption {
+    padding: 1rem 0.75rem 0.75rem;
+  }
+
+  .slide-caption h4 {
+    font-size: 1rem;
+  }
+
+  .slide-caption p {
+    font-size: 0.75rem;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .carousel-btn-prev {
+    left: 0.5rem;
+  }
+
+  .carousel-btn-next {
+    right: 0.5rem;
+  }
+}
+
+/* Touch device optimizations */
+/* Coarse pointer means touch input like fingers on touchscreens, rather than precise pointers like mice */
+@media (hover: none) and (pointer: coarse) {
+  .slide-picker-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Always show captions on touch devices */
+  .slide-caption {
+    transform: translateY(0);
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .gallery-slides {
+    height: 350px;
+  }
+
+  .slide-picker {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+
+/* Fix code block styling to ensure proper dark theme */
+.code-example {
+  background: var(--secondary) !important;
+  color: var(--white) !important;
+}
+
+.code-example pre {
+  background: transparent !important;
+  color: #f8f8f2 !important;
+}
+
+.code-example code {
+  background: transparent !important;
+  color: inherit !important;
+}

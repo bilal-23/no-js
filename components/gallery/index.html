@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | NoJS UI Components</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">NoJS UI</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="component-demo">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p class="component-description">
+          A gallery component built without JavaScript.
+        </p>
+
+        <div class="demo-container">
+          <h3>Image Gallery</h3>
+
+          <!-- Gallery Carousel Container -->
+          <section
+            class="gallery"
+            role="region"
+            aria-label="Image gallery carousel"
+            aria-roledescription="carousel"
+          >
+            <!-- Hidden radio inputs for CSS state management -->
+            <input
+              type="radio"
+              name="gallery"
+              id="img1"
+              class="gallery-radio"
+              checked
+            />
+            <input
+              type="radio"
+              name="gallery"
+              id="img2"
+              class="gallery-radio"
+            />
+            <input
+              type="radio"
+              name="gallery"
+              id="img3"
+              class="gallery-radio"
+            />
+            <input
+              type="radio"
+              name="gallery"
+              id="img4"
+              class="gallery-radio"
+            />
+            <input
+              type="radio"
+              name="gallery"
+              id="img5"
+              class="gallery-radio"
+            />
+            <input
+              type="radio"
+              name="gallery"
+              id="img6"
+              class="gallery-radio"
+            />
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+              <button
+                class="carousel-btn carousel-btn-prev"
+                aria-label="Previous image"
+                type="button"
+              >
+                <span aria-hidden="true">‹</span>
+                <span class="sr-only">Go to previous image</span>
+              </button>
+              <button
+                class="carousel-btn carousel-btn-next"
+                aria-label="Next image"
+                type="button"
+              >
+                <span aria-hidden="true">›</span>
+                <span class="sr-only">Go to next image</span>
+              </button>
+            </div>
+
+            <!-- Main Slides Container -->
+            <div class="gallery-slides" aria-live="polite" aria-atomic="false">
+              <div
+                class="slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="1 of 6"
+                data-slide="1"
+                aria-current="true"
+              >
+                <img
+                  src="https://picsum.photos/800/600?random=1"
+                  alt="Mountain landscape with snow-capped peaks"
+                />
+                <div class="slide-caption">
+                  <h4>Mountain Peaks</h4>
+                  <p>Beautiful snow-capped mountain landscape</p>
+                </div>
+              </div>
+              <div
+                class="slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="2 of 6"
+                data-slide="2"
+                aria-current="false"
+              >
+                <img
+                  src="https://picsum.photos/800/600?random=2"
+                  alt="Ocean waves crashing on rocky shore"
+                />
+                <div class="slide-caption">
+                  <h4>Ocean Waves</h4>
+                  <p>Powerful waves meeting the rocky coastline</p>
+                </div>
+              </div>
+              <div
+                class="slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="3 of 6"
+                data-slide="3"
+                aria-current="false"
+              >
+                <img
+                  src="https://picsum.photos/800/600?random=3"
+                  alt="Dense forest with tall trees and sunlight"
+                />
+                <div class="slide-caption">
+                  <h4>Forest Path</h4>
+                  <p>Sunlight filtering through ancient trees</p>
+                </div>
+              </div>
+              <div
+                class="slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="4 of 6"
+                data-slide="4"
+                aria-current="false"
+              >
+                <img
+                  src="https://picsum.photos/800/600?random=4"
+                  alt="Desert landscape with sand dunes"
+                />
+                <div class="slide-caption">
+                  <h4>Desert Dunes</h4>
+                  <p>Golden sand dunes under clear blue sky</p>
+                </div>
+              </div>
+              <div
+                class="slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="5 of 6"
+                data-slide="5"
+                aria-current="false"
+              >
+                <img
+                  src="https://picsum.photos/800/600?random=5"
+                  alt="City skyline at sunset"
+                />
+                <div class="slide-caption">
+                  <h4>City Sunset</h4>
+                  <p>Urban skyline painted by golden hour</p>
+                </div>
+              </div>
+              <div
+                class="slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="6 of 6"
+                data-slide="6"
+                aria-current="false"
+              >
+                <img
+                  src="https://picsum.photos/800/600?random=6"
+                  alt="Peaceful lake with mountain reflection"
+                />
+                <div class="slide-caption">
+                  <h4>Lake Reflection</h4>
+                  <p>Mirror-like lake reflecting mountain peaks</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide Picker Controls (Dots) -->
+            <div
+              class="slide-picker"
+              role="group"
+              aria-label="Choose slide to display"
+            >
+              <button
+                class="slide-picker-btn"
+                aria-label="Show slide 1, Mountain landscape"
+                data-slide="1"
+                aria-current="true"
+                type="button"
+              >
+                <span class="sr-only">Slide 1 of 6, Mountain landscape</span>
+              </button>
+              <button
+                class="slide-picker-btn"
+                aria-label="Show slide 2, Ocean waves"
+                data-slide="2"
+                aria-current="false"
+                type="button"
+              >
+                <span class="sr-only">Slide 2 of 6, Ocean waves</span>
+              </button>
+              <button
+                class="slide-picker-btn"
+                aria-label="Show slide 3, Forest path"
+                data-slide="3"
+                aria-current="false"
+                type="button"
+              >
+                <span class="sr-only">Slide 3 of 6, Forest path</span>
+              </button>
+              <button
+                class="slide-picker-btn"
+                aria-label="Show slide 4, Desert dunes"
+                data-slide="4"
+                aria-current="false"
+                type="button"
+              >
+                <span class="sr-only">Slide 4 of 6, Desert dunes</span>
+              </button>
+              <button
+                class="slide-picker-btn"
+                aria-label="Show slide 5, City skyline"
+                data-slide="5"
+                aria-current="false"
+                type="button"
+              >
+                <span class="sr-only">Slide 5 of 6, City skyline</span>
+              </button>
+              <button
+                class="slide-picker-btn"
+                aria-label="Show slide 6, Lake reflection"
+                data-slide="6"
+                aria-current="false"
+                type="button"
+              >
+                <span class="sr-only">Slide 6 of 6, Lake reflection</span>
+              </button>
+            </div>
+          </section>
+
+          <p class="accessibility-note">
+            <strong>Keyboard users:</strong> Use Tab to navigate through
+            carousel controls. Use Space or Enter to activate buttons. Arrow
+            keys (←→) navigate between slides when focus is on the carousel. The
+            current slide is announced when changed.
+          </p>
+        </div>
+
+        <div class="component-info">
+          <h2>How It Works</h2>
+          <div class="how-it-works">
+            <p>
+              This gallery component uses a hybrid approach combining CSS for
+              visual state management with minimal JavaScript for accessibility
+              compliance. It follows the WAI-ARIA Carousel pattern to ensure
+              perfect accessibility for all users.
+            </p>
+
+            <h3>Core Architecture</h3>
+            <p>
+              The carousel uses hidden radio buttons and CSS
+              <code>:checked</code> selectors for visual state management, while
+              JavaScript handles all accessibility features, ARIA updates, and
+              enhanced keyboard navigation that CSS alone cannot provide.
+            </p>
+
+            <h3>Why This Hybrid Approach?</h3>
+            <ul>
+              <li>
+                <strong>CSS Handles:</strong> Visual transitions, active state
+                styling, responsive design
+              </li>
+              <li>
+                <strong>JavaScript Handles:</strong> ARIA updates, screen reader
+                announcements, keyboard navigation, focus management
+              </li>
+              <li>
+                <strong>Best of Both:</strong> Smooth CSS animations with full
+                accessibility compliance
+              </li>
+            </ul>
+
+            <h3>Key Features</h3>
+            <ul>
+              <li>
+                <strong>WAI-ARIA Compliant:</strong> Follows official carousel
+                accessibility pattern
+              </li>
+              <li>
+                <strong>Dynamic ARIA Updates:</strong> JavaScript updates
+                <code>aria-current</code>, <code>aria-label</code>, and
+                announcements
+              </li>
+              <li>
+                <strong>Enhanced Keyboard Navigation:</strong> Arrow keys,
+                Home/End, Tab navigation
+              </li>
+              <li>
+                <strong>Screen Reader Announcements:</strong> Real-time slide
+                change announcements
+              </li>
+              <li>
+                <strong>Focus Management:</strong> Proper focus indicators and
+                keyboard interaction
+              </li>
+              <li>
+                <strong>Contextual Button Labels:</strong> Prev/next buttons
+                update with current slide context
+              </li>
+            </ul>
+
+            <h3>Accessibility Implementation</h3>
+            <p>
+              This carousel implements comprehensive accessibility features that
+              go far beyond basic compliance. Each feature serves specific user
+              needs and works together to create an inclusive experience for all
+              users, regardless of their abilities or assistive technologies.
+            </p>
+
+            <h4>ARIA Roles and Semantic Structure</h4>
+            <div class="accessibility-detail">
+              <p><strong>What it does:</strong></p>
+              <ul>
+                <li><code>role="region"</code> on carousel container</li>
+                <li>
+                  <code>aria-roledescription="carousel"</code> provides specific
+                  component type
+                </li>
+                <li>
+                  <code>role="group"</code> on each slide with
+                  <code>aria-roledescription="slide"</code>
+                </li>
+                <li><code>role="group"</code> on slide picker controls</li>
+              </ul>
+              <p><strong>Why it matters:</strong></p>
+              <p>
+                Screen readers need to understand the structure and purpose of
+                interface elements. Without proper roles, a screen reader might
+                announce this as "list of 6 buttons and 6 images" instead of
+                "carousel with 6 slides." The semantic structure helps users
+                understand they're in a navigation component, not just random
+                content.
+              </p>
+              <p><strong>User experience:</strong></p>
+              <p>
+                NVDA announces: "Image gallery carousel, region" - immediately
+                informing users they've entered a carousel component with
+                expected navigation patterns.
+              </p>
+            </div>
+
+            <h4>Dynamic ARIA States (aria-current)</h4>
+            <div class="accessibility-detail">
+              <p><strong>What it does:</strong></p>
+              <pre><code>// JavaScript updates current state
+slide.setAttribute('aria-current', i === index ? 'true' : 'false');
+slidePickerBtn.setAttribute('aria-current', i === index ? 'true' : 'false');</code></pre>
+              <p><strong>Why it matters:</strong></p>
+              <p>
+                <code>aria-current="true"</code> is the standard way to indicate
+                the current item in a set. This is crucial for orientation -
+                users need to know where they are in the carousel. Without this,
+                screen reader users would have no way to determine which slide
+                is currently displayed.
+              </p>
+              <p><strong>User experience:</strong></p>
+              <ul>
+                <li><strong>JAWS:</strong> "Slide 1 of 6, current, group"</li>
+                <li>
+                  <strong>VoiceOver:</strong> "Slide 1 of 6, current, group,
+                  Mountain Peaks"
+                </li>
+                <li>
+                  <strong>NVDA:</strong> "Show slide 1, Mountain landscape,
+                  button, current"
+                </li>
+              </ul>
+            </div>
+
+            <h4>Live Region Announcements</h4>
+            <div class="accessibility-detail">
+              <p><strong>What it does:</strong></p>
+              <pre><code>// Creates temporary announcement
+const announcement = `Slide ${index + 1} of ${totalSlides}: ${slideTitle}. ${slideDescription}`;
+announcement_element.setAttribute('aria-live', 'polite');
+announcement_element.setAttribute('aria-atomic', 'true');</code></pre>
+              <p><strong>Why it matters:</strong></p>
+              <p>
+                When slides change, screen reader users need to be informed of
+                the new content.
+                <code>aria-live="polite"</code> ensures announcements don't
+                interrupt the user's current reading, while
+                <code>aria-atomic="true"</code> ensures the entire announcement
+                is read as one unit, not fragmented.
+              </p>
+              <p><strong>Without this feature:</strong></p>
+              <p>
+                Users would click next/previous and hear nothing, leaving them
+                confused about whether anything changed. They'd need to manually
+                navigate to the slide content to discover what's now displayed.
+              </p>
+              <p><strong>User experience:</strong></p>
+              <p>
+                After clicking "Next": "Slide 2 of 6: Ocean Waves. Powerful
+                waves meeting the rocky coastline" - users immediately
+                understand what changed and where they are.
+              </p>
+            </div>
+
+            <h4>Contextual Button Labels</h4>
+            <div class="accessibility-detail">
+              <p><strong>What it does:</strong></p>
+              <pre><code>// Updates button context dynamically
+prevBtn.setAttribute('aria-label', 
+  `Previous image (currently viewing: ${currentSlideInfo})`);
+nextBtn.setAttribute('aria-label', 
+  `Next image (currently viewing: ${currentSlideInfo})`);</code></pre>
+              <p><strong>Why it matters:</strong></p>
+              <p>
+                Generic "Previous" and "Next" buttons provide minimal context.
+                Enhanced labels give users spatial awareness and help them
+                understand the current state before deciding to navigate. This
+                is especially important for users who might not have heard the
+                initial slide announcement.
+              </p>
+              <p><strong>Cognitive accessibility benefit:</strong></p>
+              <p>
+                Users with cognitive disabilities benefit from the extra
+                context, reducing mental load and providing confirmation of
+                current location within the carousel.
+              </p>
+              <p><strong>User experience:</strong></p>
+              <p>
+                Tab to Previous button: "Previous image (currently viewing:
+                Mountain Peaks), button" - users know exactly where they are and
+                what will happen if they activate this control.
+              </p>
+            </div>
+
+            <h4>Position and Context Information</h4>
+            <div class="accessibility-detail">
+              <p><strong>What it does:</strong></p>
+              <ul>
+                <li>Each slide labeled as "X of Y" (e.g., "1 of 6")</li>
+                <li>
+                  Slide picker buttons include position and content preview
+                </li>
+                <li>
+                  Carousel container updates with current slide information
+                </li>
+              </ul>
+              <p><strong>Why it matters:</strong></p>
+              <p>
+                Spatial orientation is crucial for accessibility. Sighted users
+                can see thumbnails and progress indicators, but screen reader
+                users need explicit position information. This helps users
+                understand the scope of content and their current location.
+              </p>
+              <p><strong>WCAG 2.1 Compliance:</strong></p>
+              <ul>
+                <li>
+                  <strong>2.4.6 Headings and Labels:</strong> Descriptive labels
+                  help users understand purpose
+                </li>
+                <li>
+                  <strong>2.4.8 Location:</strong> Users can determine their
+                  location within the carousel
+                </li>
+                <li>
+                  <strong>3.2.4 Consistent Identification:</strong> Navigation
+                  controls have consistent, predictable behavior
+                </li>
+              </ul>
+            </div>
+
+            <h4>Enhanced Keyboard Navigation</h4>
+            <div class="accessibility-detail">
+              <p><strong>What it does:</strong></p>
+              <pre><code>// Arrow key navigation
+case 'ArrowLeft': goToPrevSlide(); break;
+case 'ArrowRight': goToNextSlide(); break;
+case 'Home': goToSlide(0); break;
+case 'End': goToSlide(totalSlides - 1); break;</code></pre>
+              <p><strong>Why it matters:</strong></p>
+              <p>
+                The WAI-ARIA Carousel pattern specifies that arrow keys should
+                navigate between slides when focus is within the carousel. This
+                provides efficient navigation for keyboard users who might
+                otherwise need to tab through individual slide picker buttons.
+              </p>
+              <p><strong>Motor disability benefits:</strong></p>
+              <p>
+                Users with limited mobility can navigate the entire carousel
+                with just arrow keys, reducing the number of key presses
+                required. Home/End keys provide quick access to carousel
+                boundaries.
+              </p>
+              <p><strong>Pattern consistency:</strong></p>
+              <p>
+                Follows established conventions that users expect from carousel
+                components, reducing cognitive load and leveraging existing user
+                knowledge.
+              </p>
+            </div>
+
+            <h4>Focus Management and Visual Indicators</h4>
+            <div class="accessibility-detail">
+              <p><strong>What it does:</strong></p>
+              <ul>
+                <li>Clear focus rings on all interactive elements</li>
+                <li>Focus remains on activated control after use</li>
+                <li>Focus doesn't get trapped or lost during navigation</li>
+              </ul>
+              <p><strong>Why it matters:</strong></p>
+              <p>
+                Users with low vision or motor disabilities rely on visible
+                focus indicators to understand which element is active. Proper
+                focus management ensures users don't lose their place when
+                interacting with the carousel.
+              </p>
+              <p><strong>WCAG 2.1 Compliance:</strong></p>
+              <ul>
+                <li>
+                  <strong>2.4.7 Focus Visible:</strong> Clear visual focus
+                  indicators
+                </li>
+                <li>
+                  <strong>3.2.1 On Focus:</strong> No unexpected context changes
+                  when receiving focus
+                </li>
+                <li>
+                  <strong>3.2.2 On Input:</strong> Predictable behavior when
+                  controls are activated
+                </li>
+              </ul>
+            </div>
+
+            <h4>Multi-Modal Accessibility Support</h4>
+            <div class="accessibility-detail">
+              <p><strong>Screen Readers:</strong></p>
+              <ul>
+                <li>NVDA, JAWS, VoiceOver all receive proper announcements</li>
+                <li>
+                  Role information helps users understand component structure
+                </li>
+                <li>Live regions provide change notifications</li>
+              </ul>
+              <p><strong>Voice Control:</strong></p>
+              <ul>
+                <li>
+                  Descriptive button labels enable voice commands like "click
+                  previous image"
+                </li>
+                <li>
+                  Semantic roles help voice software identify interactive
+                  elements
+                </li>
+              </ul>
+              <p><strong>Switch Navigation:</strong></p>
+              <ul>
+                <li>All controls accessible via sequential Tab navigation</li>
+                <li>No mouse-only interactions required</li>
+                <li>Predictable tab order through carousel controls</li>
+              </ul>
+              <p><strong>Cognitive Accessibility:</strong></p>
+              <ul>
+                <li>Consistent interaction patterns</li>
+                <li>Clear labeling with context information</li>
+                <li>Predictable behavior following established conventions</li>
+              </ul>
+            </div>
+
+            <h3>Keyboard Navigation Summary</h3>
+            <ul>
+              <li>
+                <strong>Tab:</strong> Navigate between carousel controls (prev,
+                next, slide picker dots)
+              </li>
+              <li><strong>Space/Enter:</strong> Activate focused buttons</li>
+              <li>
+                <strong>Arrow Left/Right:</strong> Navigate between slides when
+                focus is on carousel
+              </li>
+              <li><strong>Home/End:</strong> Jump to first/last slide</li>
+            </ul>
+
+            <h3>JavaScript Requirements</h3>
+            <p>
+              While the visual functionality works without JavaScript (thanks to
+              CSS), the accessibility features require minimal JavaScript for:
+            </p>
+            <ol>
+              <li>
+                <strong>ARIA Attribute Updates:</strong> CSS cannot dynamically
+                update ARIA attributes
+              </li>
+              <li>
+                <strong>Screen Reader Announcements:</strong> Proper live region
+                management
+              </li>
+              <li>
+                <strong>Enhanced Keyboard Events:</strong> Arrow key navigation
+                and Home/End support
+              </li>
+              <li>
+                <strong>Context-Aware Labels:</strong> Dynamic button labels
+                with current slide information
+              </li>
+            </ol>
+
+            <h3>Graceful Degradation</h3>
+            <p>If JavaScript is disabled, the carousel still functions with:</p>
+            <ul>
+              <li>Click navigation via slide picker dots</li>
+              <li>Basic keyboard navigation (Tab + Space)</li>
+              <li>Visual state management via CSS</li>
+              <li>All images and content remain accessible</li>
+            </ul>
+
+            <h3>Implementation Code</h3>
+            <div class="code-example">
+              <h4>HTML Structure</h4>
+              <pre><code class="language-html">&lt;!-- Carousel with proper ARIA structure --&gt;
+&lt;section role="region" aria-label="Image gallery carousel" aria-roledescription="carousel"&gt;
+  &lt;!-- Hidden radio buttons for CSS state management --&gt;
+  &lt;input type="radio" name="gallery" id="img1" checked&gt;
+  
+  &lt;!-- Carousel controls --&gt;
+  &lt;button class="carousel-btn carousel-btn-prev" aria-label="Previous image"&gt;‹&lt;/button&gt;
+  &lt;button class="carousel-btn carousel-btn-next" aria-label="Next image"&gt;›&lt;/button&gt;
+  
+  &lt;!-- Slides with proper roles --&gt;
+  &lt;div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 6"&gt;
+    &lt;img src="image.jpg" alt="Descriptive alt text" /&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Slide picker controls --&gt;
+  &lt;button class="slide-picker-btn" aria-current="true"&gt;&lt;/button&gt;
+&lt;/section&gt;</code></pre>
+
+              <h4>CSS State Management</h4>
+              <pre><code class="language-css">/* Hide all slides by default */
+.slide {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.5s ease;
+}
+
+/* Show active slide when radio is checked */
+#img1:checked ~ .gallery-slides .slide[data-slide="1"] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Active slide picker styling */
+.slide-picker-btn[aria-current="true"] {
+  background: var(--primary);
+  transform: scale(1.3);
+}</code></pre>
+
+              <h4>JavaScript Accessibility Enhancement</h4>
+              <pre><code class="language-javascript">// Update ARIA states dynamically
+function updateCarousel(index) {
+  // Update slides
+  slides.forEach((slide, i) => {
+    slide.setAttribute('aria-current', i === index ? 'true' : 'false');
+  });
+  
+  // Update button context
+  const currentSlideInfo = slides[index].querySelector('h4').textContent;
+  prevBtn.setAttribute('aria-label', 
+    `Previous image (currently viewing: ${currentSlideInfo})`);
+}
+
+// Announce changes to screen readers
+function announceSlideChange(index) {
+  const announcement = `Slide ${index + 1} of ${totalSlides}: ${slideTitle}`;
+  // Create temporary live region for screen reader announcement
+}</code></pre>
+            </div>
+
+            <h3>Additional Resources</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/bilal-23/no-js/tree/main/components/gallery"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View this component on GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MDN Web Docs: :checked pseudo-class
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/carousel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WAI-ARIA: Carousel Pattern
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      // Accessible Carousel Implementation
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".gallery");
+        const slides = carousel.querySelectorAll(".slide");
+        const slidePickerBtns = carousel.querySelectorAll(".slide-picker-btn");
+        const prevBtn = carousel.querySelector(".carousel-btn-prev");
+        const nextBtn = carousel.querySelector(".carousel-btn-next");
+        const radioButtons = carousel.querySelectorAll(".gallery-radio");
+        const slidesContainer = carousel.querySelector(".gallery-slides");
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        // Initialize carousel
+        function init() {
+          updateCarousel(0);
+          addEventListeners();
+        }
+
+        // Add all event listeners
+        function addEventListeners() {
+          // Previous/Next button clicks
+          prevBtn.addEventListener("click", () => goToPrevSlide());
+          nextBtn.addEventListener("click", () => goToNextSlide());
+
+          // Slide picker button clicks
+          slidePickerBtns.forEach((btn, index) => {
+            btn.addEventListener("click", () => goToSlide(index));
+          });
+
+          // Keyboard navigation on carousel
+          carousel.addEventListener("keydown", handleKeyDown);
+
+          // Radio button changes (for CSS state management)
+          radioButtons.forEach((radio, index) => {
+            radio.addEventListener("change", function () {
+              if (this.checked) {
+                updateCarousel(index);
+              }
+            });
+          });
+        }
+
+        // Handle keyboard navigation
+        function handleKeyDown(event) {
+          // Only handle keyboard events when focus is within the carousel
+          if (!carousel.contains(document.activeElement)) return;
+
+          switch (event.key) {
+            case "ArrowLeft":
+              event.preventDefault();
+              goToPrevSlide();
+              break;
+            case "ArrowRight":
+              event.preventDefault();
+              goToNextSlide();
+              break;
+            case "Home":
+              event.preventDefault();
+              goToSlide(0);
+              break;
+            case "End":
+              event.preventDefault();
+              goToSlide(totalSlides - 1);
+              break;
+          }
+        }
+
+        // Navigate to previous slide
+        function goToPrevSlide() {
+          const prevIndex =
+            currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+          goToSlide(prevIndex);
+        }
+
+        // Navigate to next slide
+        function goToNextSlide() {
+          const nextIndex =
+            currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+          goToSlide(nextIndex);
+        }
+
+        // Navigate to specific slide
+        function goToSlide(index) {
+          if (index < 0 || index >= totalSlides) return;
+
+          currentSlide = index;
+
+          // Update radio button (for CSS state management)
+          radioButtons[index].checked = true;
+
+          // Update all ARIA attributes and announcements
+          updateCarousel(index);
+
+          // Announce slide change to screen readers
+          announceSlideChange(index);
+        }
+
+        // Update all carousel elements
+        function updateCarousel(index) {
+          currentSlide = index;
+
+          // Update slides ARIA attributes
+          slides.forEach((slide, i) => {
+            slide.setAttribute("aria-current", i === index ? "true" : "false");
+          });
+
+          // Update slide picker buttons
+          slidePickerBtns.forEach((btn, i) => {
+            btn.setAttribute("aria-current", i === index ? "true" : "false");
+          });
+
+          // Update prev/next button labels with context
+          const currentSlideInfo =
+            slides[index].querySelector("h4").textContent;
+          prevBtn.setAttribute(
+            "aria-label",
+            `Previous image (currently viewing: ${currentSlideInfo})`
+          );
+          nextBtn.setAttribute(
+            "aria-label",
+            `Next image (currently viewing: ${currentSlideInfo})`
+          );
+
+          // Update carousel container aria-label
+          carousel.setAttribute(
+            "aria-label",
+            `Image gallery carousel, slide ${
+              index + 1
+            } of ${totalSlides}: ${currentSlideInfo}`
+          );
+        }
+
+        // Announce slide changes to screen readers
+        function announceSlideChange(index) {
+          const slide = slides[index];
+          const slideTitle = slide.querySelector("h4").textContent;
+          const slideDescription = slide.querySelector("p").textContent;
+          const announcement = `Slide ${
+            index + 1
+          } of ${totalSlides}: ${slideTitle}. ${slideDescription}`;
+
+          // Create temporary announcement element
+          const announcement_element = document.createElement("div");
+          announcement_element.setAttribute("aria-live", "polite");
+          announcement_element.setAttribute("aria-atomic", "true");
+          announcement_element.className = "sr-only";
+          announcement_element.textContent = announcement;
+
+          // Add to DOM briefly for screen reader announcement
+          slidesContainer.appendChild(announcement_element);
+
+          // Remove after announcement
+          setTimeout(() => {
+            if (announcement_element.parentNode) {
+              announcement_element.parentNode.removeChild(announcement_element);
+            }
+          }, 1000);
+        }
+
+        // Focus management
+        function focusSlide(index) {
+          // Optionally focus the slide for better keyboard navigation
+          // slides[index].focus();
+        }
+
+        // Initialize the carousel
+        init();
+
+        // Expose methods for potential external use
+        window.galleryCarousel = {
+          goToSlide,
+          goToNextSlide,
+          goToPrevSlide,
+          getCurrentSlide: () => currentSlide,
+          getTotalSlides: () => totalSlides,
+        };
+      });
+    </script>
+  </body>
+</html>
