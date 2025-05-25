@@ -118,6 +118,7 @@
                 aria-label="2 of 6"
                 data-slide="2"
                 aria-current="false"
+                aria-hidden="true"
               >
                 <img
                   src="https://picsum.photos/800/600?random=2"
@@ -135,6 +136,7 @@
                 aria-label="3 of 6"
                 data-slide="3"
                 aria-current="false"
+                aria-hidden="true"
               >
                 <img
                   src="https://picsum.photos/800/600?random=3"
@@ -152,6 +154,7 @@
                 aria-label="4 of 6"
                 data-slide="4"
                 aria-current="false"
+                aria-hidden="true"
               >
                 <img
                   src="https://picsum.photos/800/600?random=4"
@@ -169,6 +172,7 @@
                 aria-label="5 of 6"
                 data-slide="5"
                 aria-current="false"
+                aria-hidden="true"
               >
                 <img
                   src="https://picsum.photos/800/600?random=5"
@@ -186,6 +190,7 @@
                 aria-label="6 of 6"
                 data-slide="6"
                 aria-current="false"
+                aria-hidden="true"
               >
                 <img
                   src="https://picsum.photos/800/600?random=6"
@@ -687,6 +692,12 @@ function updateCarousel(index) {
   // Update slides
   slides.forEach((slide, i) => {
     slide.setAttribute('aria-current', i === index ? 'true' : 'false');
+    // Hide inactive slides from screen readers
+    if (i === index) {
+      slide.removeAttribute("aria-hidden");
+    } else {
+      slide.setAttribute("aria-hidden", "true");
+    }
   });
   
   // Update button context
@@ -814,8 +825,8 @@ function announceSlideChange(index) {
 
         // Navigate to next slide
         function goToNextSlide() {
-          const nextIndex =
-            currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+          const nextIndex = ma;
+          currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
           goToSlide(nextIndex);
         }
 
@@ -842,6 +853,12 @@ function announceSlideChange(index) {
           // Update slides ARIA attributes
           slides.forEach((slide, i) => {
             slide.setAttribute("aria-current", i === index ? "true" : "false");
+            // Hide inactive slides from screen readers
+            if (i === index) {
+              slide.removeAttribute("aria-hidden");
+            } else {
+              slide.setAttribute("aria-hidden", "true");
+            }
           });
 
           // Update slide picker buttons
