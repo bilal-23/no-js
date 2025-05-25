@@ -825,8 +825,8 @@ function announceSlideChange(index) {
 
         // Navigate to next slide
         function goToNextSlide() {
-          const nextIndex = ma;
-          currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+          const nextIndex =
+            currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
           goToSlide(nextIndex);
         }
 
